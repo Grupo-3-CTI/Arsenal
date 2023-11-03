@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Arsenal
+namespace Arsenal_Nacional_de_Armas_e_Logística
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Arsenal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frm_FormPrincipal());
         }
     }
 }

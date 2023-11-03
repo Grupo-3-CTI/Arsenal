@@ -29,6 +29,10 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         void mudarTextoParaNegrito(ref List<System.Windows.Forms.Label> campos);
         void mudarFonteAoNormal(ref System.Windows.Forms.Label campo);
         void mudarFonteAoNormal(ref List<System.Windows.Forms.Label> campos);
+        void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int tamanho);
+        void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int tamanho);
+
+
 
         /* Exibição de erros */
         void mostrarErro(string erro);
