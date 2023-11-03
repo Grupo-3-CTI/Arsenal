@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arsenal_Nacional_de_Armas_e_Logística;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,8 @@ namespace Arsenal
     {
         public Form1()
         {
+            FormTestes frmAdotante = new FormTestes();
+            frmAdotante.ShowDialog();
             InitializeComponent();
         }
     }
