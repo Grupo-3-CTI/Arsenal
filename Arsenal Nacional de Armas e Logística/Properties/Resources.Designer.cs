@@ -99,5 +99,15 @@ namespace Arsenal_Nacional_de_Armas_e_Logística.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pesquisar {
+            get {
+                object obj = ResourceManager.GetObject("Pesquisar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

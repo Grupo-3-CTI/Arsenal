@@ -13,9 +13,11 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 {
     internal class Util : Ferramentas
     {
-        public void mostrarErro(string erro)
+        public void mostrarErro(string erro, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
-            MessageBox.Show("Erro:" + erro);
+            string mensagem = "Erro: "  +erro;
+            MessageBox.Show(mensagem);
+            Footer.Text = mensagem;
         }
         public NpgsqlConnection ConectarComDB()
         {
@@ -23,7 +25,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             connectionString: "Server=localhost;" + "Port=5432;" +
             "User ID=postgres;" + "Password=postgres;" + "Database=projeto_2b;" + "Pooling=true;");
         }
-        public void fillDataGrid(string query, NpgsqlConnection conexao, DataGrid Datagrid, string nomeTabela)
+        public void fillDataGrid(string query, NpgsqlConnection conexao, DataGrid Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
             if (String.IsNullOrEmpty(query))
             {
@@ -43,11 +45,11 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
             catch (NpgsqlException ex)
             {
-                mostrarErro(ex.Message);
+                mostrarErro(ex.Message, ref Footer);
             }
         }
         //Para comandos que não retornam uma query. (INSERT, DELETE, UPDATE, etc)
-        public void executarComandoDB(string query, NpgsqlConnection conexao)
+        public void executarComandoDB(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
             try
             {
@@ -60,7 +62,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
             catch (NpgsqlException ex)
             {
-                mostrarErro(ex.Message);
+                mostrarErro(ex.Message, ref Footer);
             }
         }
         public bool nenhumCampoVazio(params dynamic[] campos)
@@ -120,6 +122,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 
             campo.Font = new Font(pfc.Families[0], tamanho, FontStyle.Regular);
         }
+        //Sobrecarga do método para listas
         public void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int tamanho)
         {
             foreach (var campo in campos)

@@ -38,14 +38,9 @@
             this.tsmi_Cadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeArmasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeMuniçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_Home = new System.Windows.Forms.ToolStripMenuItem();
-            this.ssr_Footer = new System.Windows.Forms.StatusStrip();
-            this.slbl_MensagemErro = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tslbl_TextoFooter = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsmi_Ajuda = new System.Windows.Forms.ToolStripMenuItem();
             this.grp_Opções.SuspendLayout();
             this.mns_Menu.SuspendLayout();
-            this.ssr_Footer.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_titulo1
@@ -85,8 +80,7 @@
             this.lbl_titulo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo3.ForeColor = System.Drawing.Color.FloralWhite;
             this.lbl_titulo3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_titulo3.Location = new System.Drawing.Point(226, 367);
-            this.lbl_titulo3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lbl_titulo3.Location = new System.Drawing.Point(222, 390);
             this.lbl_titulo3.Name = "lbl_titulo3";
             this.lbl_titulo3.Size = new System.Drawing.Size(386, 51);
             this.lbl_titulo3.TabIndex = 7;
@@ -122,7 +116,6 @@
             this.btn_Estoque.TabIndex = 1;
             this.btn_Estoque.Text = "Estoque de munições";
             this.btn_Estoque.UseVisualStyleBackColor = false;
-            this.btn_Estoque.Click += new System.EventHandler(this.btn_Estoque_Click);
             // 
             // btn_Armas
             // 
@@ -147,7 +140,7 @@
             this.mns_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mns_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_Cadastro,
-            this.tsmi_Home});
+            this.tsmi_Ajuda});
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
             this.mns_Menu.Size = new System.Drawing.Size(800, 28);
@@ -160,8 +153,9 @@
             this.cadastroDeArmasToolStripMenuItem,
             this.cadastroDeMuniçõesToolStripMenuItem});
             this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 26);
+            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 24);
             this.tsmi_Cadastro.Text = "Cadastro";
+            this.tsmi_Cadastro.Click += new System.EventHandler(this.tsmi_Cadastro_Click);
             // 
             // cadastroDeArmasToolStripMenuItem
             // 
@@ -177,45 +171,11 @@
             this.cadastroDeMuniçõesToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.cadastroDeMuniçõesToolStripMenuItem.Text = "Cadastro de Munições";
             // 
-            // tsmi_Home
+            // tsmi_Ajuda
             // 
-            this.tsmi_Home.Name = "tsmi_Home";
-            this.tsmi_Home.Size = new System.Drawing.Size(64, 24);
-            this.tsmi_Home.Text = "Home";
-            // 
-            // ssr_Footer
-            // 
-            this.ssr_Footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ssr_Footer.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ssr_Footer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.slbl_MensagemErro,
-            this.toolStripStatusLabel1,
-            this.tslbl_TextoFooter});
-            this.ssr_Footer.Location = new System.Drawing.Point(0, 424);
-            this.ssr_Footer.Name = "ssr_Footer";
-            this.ssr_Footer.Size = new System.Drawing.Size(800, 26);
-            this.ssr_Footer.TabIndex = 12;
-            // 
-            // slbl_MensagemErro
-            // 
-            this.slbl_MensagemErro.ForeColor = System.Drawing.Color.FloralWhite;
-            this.slbl_MensagemErro.Name = "slbl_MensagemErro";
-            this.slbl_MensagemErro.Size = new System.Drawing.Size(0, 20);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.ActiveLinkColor = System.Drawing.Color.SaddleBrown;
-            this.toolStripStatusLabel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 20);
-            // 
-            // tslbl_TextoFooter
-            // 
-            this.tslbl_TextoFooter.ForeColor = System.Drawing.Color.White;
-            this.tslbl_TextoFooter.Name = "tslbl_TextoFooter";
-            this.tslbl_TextoFooter.Size = new System.Drawing.Size(180, 20);
-            this.tslbl_TextoFooter.Text = "Nenhum erro encontrado!";
+            this.tsmi_Ajuda.Name = "tsmi_Ajuda";
+            this.tsmi_Ajuda.Size = new System.Drawing.Size(62, 24);
+            this.tsmi_Ajuda.Text = "Ajuda";
             // 
             // frm_FormPrincipal
             // 
@@ -226,7 +186,6 @@
             this.BackgroundImage = global::Arsenal_Nacional_de_Armas_e_Logística.Properties.Resources.AK_Logo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ssr_Footer);
             this.Controls.Add(this.grp_Opções);
             this.Controls.Add(this.lbl_titulo3);
             this.Controls.Add(this.lbl_titulo2);
@@ -241,8 +200,6 @@
             this.grp_Opções.ResumeLayout(false);
             this.mns_Menu.ResumeLayout(false);
             this.mns_Menu.PerformLayout();
-            this.ssr_Footer.ResumeLayout(false);
-            this.ssr_Footer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,10 +217,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeArmasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeMuniçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_Home;
-        private System.Windows.Forms.StatusStrip ssr_Footer;
-        private System.Windows.Forms.ToolStripStatusLabel slbl_MensagemErro;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel tslbl_TextoFooter;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_Ajuda;
     }
 }
