@@ -14,8 +14,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
     {
         Util Utilidade = new Util();
         int energia;
-        int peso;
-        int velocidade;
         string texto;
 
         public Frm_MuniçãoEstoque()
@@ -53,6 +51,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void txt_Peso_Enter(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Peso, "Peso em gramas", true);
+            tentarCalcularEnergia();
             Utilidade.adicionarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", true);
         }
 
@@ -60,12 +59,14 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void txt_Peso_Leave(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Peso, "Peso em gramas", false);
+            tentarCalcularEnergia();
             Utilidade.adicionarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", false);
         }
 
         private void txt_Velocidade_Enter(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Velocidade, "Velocidade em m/s", true);
+            tentarCalcularEnergia();
             Utilidade.adicionarUnidadeDeMedida(ref txt_Velocidade, "Velocidade em m/s", "m/s", true);
         }
         private void txt_Velocidade_Leave(object sender, EventArgs e)
@@ -85,9 +86,11 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         private void tentarCalcularEnergia()
         {
-            if (Int32.TryParse() {
-                energia = Int32.Parse(txt_Peso.Text) * Int32.Parse(txt_Velocidade.Text);
-                texto = energia.ToString();
+            int peso;
+            int velocidade;
+            if (Int32.TryParse(txt_Peso.Text,out peso) && Int32.TryParse(txt_Velocidade.Text, out velocidade)) {
+                energia = peso * velocidade;
+                string texto = energia.ToString();
                 txt_Energia.Text = texto;
             }
             else
