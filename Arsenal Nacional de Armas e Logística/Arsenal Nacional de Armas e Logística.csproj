@@ -113,7 +113,7 @@
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
-    <Compile Include="FerramentasI.cs" />
+    <Compile Include="Ferramentas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_MuniçãoEstoque .resx">
@@ -136,8 +136,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Properties\ARMY RUST.ttf" />
-    <None Include="Properties\Capture it.ttf" />
+    <None Include="Resources\Capture_it.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

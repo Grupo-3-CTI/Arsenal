@@ -71,16 +71,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
-        /// </summary>
-        internal static byte[] ARMY_RUST {
-            get {
-                object obj = ResourceManager.GetObject("ARMY_RUST", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap brasil {

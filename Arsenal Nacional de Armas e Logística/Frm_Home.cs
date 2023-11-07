@@ -17,17 +17,31 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         List<System.Windows.Forms.Label> Titulos = new List<System.Windows.
             Forms.Label>();
-        PrivateFontCollection pfc = new PrivateFontCollection();
-        
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
+            IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
+
+        private PrivateFontCollection pfc = new PrivateFontCollection();
+
+        Font capture_it;
+
         public frm_FormPrincipal()
         {
             InitializeComponent();
-            pfc.AddFontFile("C:\\Users\\ferna\\source\\repos\\Arsenal\\Arsenal Nacional de Armas e Logística\\Properties\\Capture it.ttf");
+            byte[] capture_itData = Properties.Resources.Capture_it;
+            IntPtr capture_itPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(capture_itData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(capture_itData, 0, capture_itPtr, capture_itData.Length);
+            uint dummy = 0;
+            pfc.AddMemoryFont(capture_itPtr, Properties.Resources.Capture_it.Length);
+            AddFontMemResourceEx(capture_itPtr, (uint)Properties.Resources.Capture_it.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(capture_itPtr);
+            capture_it = new Font(pfc.Families[0], 26, FontStyle.Regular);
+
             Titulos.Add(lbl_titulo1);
             Titulos.Add(lbl_titulo2);
             Titulos.Add(lbl_titulo3);
-            Utilidade.usarFonteCustomizada(ref Titulos, pfc, 26);
-            
+            Utilidade.usarFonteCustomizada(ref Titulos, capture_it);
+
 
         }
 
@@ -43,9 +57,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         private void FormTestes_Resize(object sender, EventArgs e)
         {
-            pfc.AddFontFile("C:\\Users\\ferna\\source\\repos\\Arsenal\\Arsenal Nacional de Armas e Logística\\Properties\\Capture it.ttf");
-
-            Utilidade.usarFonteCustomizada(ref Titulos, pfc, 26);
+            Utilidade.usarFonteCustomizada(ref Titulos, capture_it);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -68,15 +80,15 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         {
             Frm_ArmasEstoque form = new Frm_ArmasEstoque();
             form.ShowDialog();
-            
-            
+
+
         }
 
         private void cadastroDeArmasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_ArmasEstoque form = new Frm_ArmasEstoque();
             form.ShowDialog();
-            
+
         }
 
         private void cadastroDeMuniçõesToolStripMenuItem_Click(object sender, EventArgs e)

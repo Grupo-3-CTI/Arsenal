@@ -117,17 +117,28 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 campo.Font = new Font(campo.Font, FontStyle.Regular);
         }
 
-        public void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int tamanho)
+        public void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int familia, int tamanho)
         {
                 
-            campo.Font = new Font(pfc.Families[0], tamanho, FontStyle.Regular);
+            campo.Font = new Font(pfc.Families[familia], tamanho, FontStyle.Regular);
         }
         //Sobrecarga do método para listas
-        public void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int tamanho)
+        public void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int familia, int tamanho)
         {
             foreach (var campo in campos)
             {
-                campo.Font = new Font(pfc.Families[0], tamanho, FontStyle.Regular);
+                campo.Font = new Font(pfc.Families[familia], tamanho, FontStyle.Regular);
+           
+            }
+        }
+        public void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic fonte) { 
+            campo.Font = fonte;
+        }
+        public void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic fonte)
+        {
+            foreach (var campo in campos)
+            {
+                campo.Font = fonte;
             }
         }
         public void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco)
