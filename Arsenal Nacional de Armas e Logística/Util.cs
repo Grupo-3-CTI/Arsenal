@@ -130,5 +130,37 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 campo.Font = new Font(pfc.Families[0], tamanho, FontStyle.Regular);
             }
         }
+        public void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco)
+        {      
+            if (ganhouFoco && campo.Text == placeholderText)
+            {
+                campo.Text = "";
+                campo.ForeColor = Color.Black;
+            }
+            else if (String.IsNullOrEmpty(campo.Text))
+            {
+                campo.Text = placeholderText;
+                campo.ForeColor = Color.DimGray;
+            }
+
+        }
+        public void adicionarUnidadeDeMedida (ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool  ganhouFoco)
+        {
+            if (ganhouFoco && !String.IsNullOrEmpty(campo.Text))
+            {
+                campo.Text = campo.Text.Remove(campo.Text.Length - unidadeDeMedida.Length-1, unidadeDeMedida.Length+1);
+            }
+            else if(!String.IsNullOrEmpty(campo.Text) && campo.Text != placeholderText)
+            {
+                campo.Text += " " + unidadeDeMedida;
+            }
+        }
+        public void aceitarSomenteNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar) || e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

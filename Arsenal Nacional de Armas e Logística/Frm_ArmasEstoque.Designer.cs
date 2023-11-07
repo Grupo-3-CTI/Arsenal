@@ -46,7 +46,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Cadencia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_Munição = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.mns_Menu.SuspendLayout();
             this.ssr_Footer.SuspendLayout();
             this.grp_TelaEstoque.SuspendLayout();
@@ -62,7 +71,7 @@
             this.tsmi_Home});
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
-            this.mns_Menu.Size = new System.Drawing.Size(1070, 28);
+            this.mns_Menu.Size = new System.Drawing.Size(1070, 30);
             this.mns_Menu.TabIndex = 10;
             this.mns_Menu.Text = "menuStrip1";
             // 
@@ -124,7 +133,16 @@
             // grp_TelaEstoque
             // 
             this.grp_TelaEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grp_TelaEstoque.Controls.Add(this.comboBox1);
+            this.grp_TelaEstoque.Controls.Add(this.button5);
+            this.grp_TelaEstoque.Controls.Add(this.button4);
+            this.grp_TelaEstoque.Controls.Add(this.button3);
+            this.grp_TelaEstoque.Controls.Add(this.textBox1);
+            this.grp_TelaEstoque.Controls.Add(this.label6);
+            this.grp_TelaEstoque.Controls.Add(this.button2);
+            this.grp_TelaEstoque.Controls.Add(this.dateTimePicker1);
+            this.grp_TelaEstoque.Controls.Add(this.label5);
+            this.grp_TelaEstoque.Controls.Add(this.cmb_Munição);
+            this.grp_TelaEstoque.Controls.Add(this.label4);
             this.grp_TelaEstoque.Controls.Add(this.txt_Cadencia);
             this.grp_TelaEstoque.Controls.Add(this.label3);
             this.grp_TelaEstoque.Controls.Add(this.txt_Cartucho);
@@ -188,9 +206,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 19);
+            this.label1.Size = new System.Drawing.Size(47, 19);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Nome:";
+            this.label1.Text = "Nome";
             // 
             // txt_Nome
             // 
@@ -207,6 +225,9 @@
             this.txt_Cartucho.Size = new System.Drawing.Size(163, 22);
             this.txt_Cartucho.TabIndex = 19;
             this.txt_Cartucho.Text = "Balas por cartucho aqui...";
+            this.txt_Cartucho.Enter += new System.EventHandler(this.txt_Cartucho_Enter);
+            this.txt_Cartucho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cartucho_KeyPress);
+            this.txt_Cartucho.Leave += new System.EventHandler(this.txt_Cartucho_Leave);
             // 
             // label2
             // 
@@ -226,6 +247,9 @@
             this.txt_Cadencia.Size = new System.Drawing.Size(154, 22);
             this.txt_Cadencia.TabIndex = 21;
             this.txt_Cadencia.Text = "Tiros por segundo aqui...";
+            this.txt_Cadencia.Enter += new System.EventHandler(this.txt_Cadencia_Enter);
+            this.txt_Cadencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cadencia_KeyPress);
+            this.txt_Cadencia.Leave += new System.EventHandler(this.txt_Cadencia_Leave);
             // 
             // label3
             // 
@@ -237,13 +261,94 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Cadência de tiro";
             // 
-            // comboBox1
+            // label4
             // 
-            this.comboBox1.Location = new System.Drawing.Point(639, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 22;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(572, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 19);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Tipo de munição";
+            // 
+            // cmb_Munição
+            // 
+            this.cmb_Munição.FormattingEnabled = true;
+            this.cmb_Munição.Location = new System.Drawing.Point(576, 49);
+            this.cmb_Munição.Name = "cmb_Munição";
+            this.cmb_Munição.Size = new System.Drawing.Size(134, 24);
+            this.cmb_Munição.TabIndex = 24;
+            this.cmb_Munição.SelectedIndexChanged += new System.EventHandler(this.cmb_Munição_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(739, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 19);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Data de fabricação";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(743, 49);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 27;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 146);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(29, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 22);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(26, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 19);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Código serial";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(135, 146);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 31;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(243, 146);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 32;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(346, 146);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Frm_ArmasEstoque
             // 
@@ -293,6 +398,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Cadencia;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_Munição;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

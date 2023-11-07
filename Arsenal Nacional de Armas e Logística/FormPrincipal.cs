@@ -15,7 +15,8 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
     {
         Util Utilidade = new Util();
 
-        List<System.Windows.Forms.Label> Titulos = new List<System.Windows.Forms.Label>();
+        List<System.Windows.Forms.Label> Titulos = new List<System.Windows.
+            Forms.Label>();
         PrivateFontCollection pfc = new PrivateFontCollection();
         
         public frm_FormPrincipal()
