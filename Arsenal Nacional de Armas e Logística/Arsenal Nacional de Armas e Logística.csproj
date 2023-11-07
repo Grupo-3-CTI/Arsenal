@@ -94,24 +94,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_MuniçãoEstoque .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MuniçãoEstoque .Designer.cs">
+      <DependentUpon>Frm_MuniçãoEstoque .cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_ArmasEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_ArmasEstoque.Designer.cs">
       <DependentUpon>Frm_ArmasEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <Compile Include="Frm_Home.Designer.cs">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="FerramentasI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_MuniçãoEstoque .resx">
+      <DependentUpon>Frm_MuniçãoEstoque .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Home.resx">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ArmasEstoque.resx">
       <DependentUpon>Frm_ArmasEstoque.cs</DependentUpon>

@@ -37,29 +37,29 @@
             this.slbl_MensagemErro = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslbl_TextoFooter = new System.Windows.Forms.ToolStripStatusLabel();
             this.grp_TelaEstoque = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_Pesquisar = new System.Windows.Forms.Button();
+            this.dgv_Armas = new System.Windows.Forms.DataGridView();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Nome = new System.Windows.Forms.Label();
             this.txt_Nome = new System.Windows.Forms.TextBox();
             this.txt_Cartucho = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Cartucho = new System.Windows.Forms.Label();
             this.txt_Cadencia = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Cadência = new System.Windows.Forms.Label();
+            this.lbl_TipoMunição = new System.Windows.Forms.Label();
             this.cmb_Munição = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_Data = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.lbl_CódigoSerial = new System.Windows.Forms.Label();
+            this.btn_Editar = new System.Windows.Forms.Button();
+            this.btn_Deletar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
             this.mns_Menu.SuspendLayout();
             this.ssr_Footer.SuspendLayout();
             this.grp_TelaEstoque.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Armas)).BeginInit();
             this.SuspendLayout();
             // 
             // mns_Menu
@@ -81,7 +81,7 @@
             this.cadastroDeArmasToolStripMenuItem,
             this.cadastroDeMuniçõesToolStripMenuItem});
             this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 24);
+            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 26);
             this.tsmi_Cadastro.Text = "Cadastro";
             // 
             // cadastroDeArmasToolStripMenuItem
@@ -101,8 +101,8 @@
             // tsmi_Home
             // 
             this.tsmi_Home.Name = "tsmi_Home";
-            this.tsmi_Home.Size = new System.Drawing.Size(64, 24);
-            this.tsmi_Home.Text = "Home";
+            this.tsmi_Home.Size = new System.Drawing.Size(62, 26);
+            this.tsmi_Home.Text = "Voltar";
             this.tsmi_Home.Click += new System.EventHandler(this.tsmi_Home_Click);
             // 
             // ssr_Footer
@@ -133,24 +133,24 @@
             // grp_TelaEstoque
             // 
             this.grp_TelaEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grp_TelaEstoque.Controls.Add(this.button5);
-            this.grp_TelaEstoque.Controls.Add(this.button4);
-            this.grp_TelaEstoque.Controls.Add(this.button3);
+            this.grp_TelaEstoque.Controls.Add(this.btn_Cancelar);
+            this.grp_TelaEstoque.Controls.Add(this.btn_Deletar);
+            this.grp_TelaEstoque.Controls.Add(this.btn_Editar);
             this.grp_TelaEstoque.Controls.Add(this.textBox1);
-            this.grp_TelaEstoque.Controls.Add(this.label6);
-            this.grp_TelaEstoque.Controls.Add(this.button2);
+            this.grp_TelaEstoque.Controls.Add(this.lbl_CódigoSerial);
+            this.grp_TelaEstoque.Controls.Add(this.btn_Cadastrar);
             this.grp_TelaEstoque.Controls.Add(this.dateTimePicker1);
-            this.grp_TelaEstoque.Controls.Add(this.label5);
+            this.grp_TelaEstoque.Controls.Add(this.lbl_Data);
             this.grp_TelaEstoque.Controls.Add(this.cmb_Munição);
-            this.grp_TelaEstoque.Controls.Add(this.label4);
+            this.grp_TelaEstoque.Controls.Add(this.lbl_TipoMunição);
             this.grp_TelaEstoque.Controls.Add(this.txt_Cadencia);
-            this.grp_TelaEstoque.Controls.Add(this.label3);
+            this.grp_TelaEstoque.Controls.Add(this.lbl_Cadência);
             this.grp_TelaEstoque.Controls.Add(this.txt_Cartucho);
-            this.grp_TelaEstoque.Controls.Add(this.label2);
+            this.grp_TelaEstoque.Controls.Add(this.lbl_Cartucho);
             this.grp_TelaEstoque.Controls.Add(this.txt_Nome);
-            this.grp_TelaEstoque.Controls.Add(this.label1);
-            this.grp_TelaEstoque.Controls.Add(this.button1);
-            this.grp_TelaEstoque.Controls.Add(this.dataGridView1);
+            this.grp_TelaEstoque.Controls.Add(this.lbl_Nome);
+            this.grp_TelaEstoque.Controls.Add(this.btn_Pesquisar);
+            this.grp_TelaEstoque.Controls.Add(this.dgv_Armas);
             this.grp_TelaEstoque.Controls.Add(this.txt_Pesquisa);
             this.grp_TelaEstoque.ForeColor = System.Drawing.Color.White;
             this.grp_TelaEstoque.Location = new System.Drawing.Point(27, 50);
@@ -161,29 +161,29 @@
             this.grp_TelaEstoque.TabStop = false;
             this.grp_TelaEstoque.Text = "Estoque de Armas";
             // 
-            // button1
+            // btn_Pesquisar
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackgroundImage = global::Arsenal_Nacional_de_Armas_e_Logística.Properties.Resources.Pesquisar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(929, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 26);
-            this.button1.TabIndex = 14;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Pesquisar.BackgroundImage = global::Arsenal_Nacional_de_Armas_e_Logística.Properties.Resources.Pesquisar;
+            this.btn_Pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Pesquisar.Location = new System.Drawing.Point(929, 187);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.Size = new System.Drawing.Size(26, 26);
+            this.btn_Pesquisar.TabIndex = 14;
+            this.btn_Pesquisar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv_Armas
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGreen;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 228);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 206);
-            this.dataGridView1.TabIndex = 13;
+            this.dgv_Armas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv_Armas.BackgroundColor = System.Drawing.Color.DarkGreen;
+            this.dgv_Armas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Armas.GridColor = System.Drawing.SystemColors.Control;
+            this.dgv_Armas.Location = new System.Drawing.Point(29, 228);
+            this.dgv_Armas.Name = "dgv_Armas";
+            this.dgv_Armas.RowHeadersWidth = 51;
+            this.dgv_Armas.RowTemplate.Height = 24;
+            this.dgv_Armas.Size = new System.Drawing.Size(926, 206);
+            this.dgv_Armas.TabIndex = 13;
             // 
             // txt_Pesquisa
             // 
@@ -200,15 +200,15 @@
             this.txt_Pesquisa.Enter += new System.EventHandler(this.txt_Pesquisa_Enter);
             this.txt_Pesquisa.Leave += new System.EventHandler(this.txt_Pesquisa_Leave);
             // 
-            // label1
+            // lbl_Nome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 19);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Nome";
+            this.lbl_Nome.AutoSize = true;
+            this.lbl_Nome.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Nome.Location = new System.Drawing.Point(26, 27);
+            this.lbl_Nome.Name = "lbl_Nome";
+            this.lbl_Nome.Size = new System.Drawing.Size(47, 19);
+            this.lbl_Nome.TabIndex = 15;
+            this.lbl_Nome.Text = "Nome";
             // 
             // txt_Nome
             // 
@@ -229,15 +229,15 @@
             this.txt_Cartucho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cartucho_KeyPress);
             this.txt_Cartucho.Leave += new System.EventHandler(this.txt_Cartucho_Leave);
             // 
-            // label2
+            // lbl_Cartucho
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(199, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 19);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Tamanho de cartucho";
+            this.lbl_Cartucho.AutoSize = true;
+            this.lbl_Cartucho.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Cartucho.Location = new System.Drawing.Point(199, 27);
+            this.lbl_Cartucho.Name = "lbl_Cartucho";
+            this.lbl_Cartucho.Size = new System.Drawing.Size(144, 19);
+            this.lbl_Cartucho.TabIndex = 18;
+            this.lbl_Cartucho.Text = "Tamanho de cartucho";
             // 
             // txt_Cadencia
             // 
@@ -251,25 +251,25 @@
             this.txt_Cadencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cadencia_KeyPress);
             this.txt_Cadencia.Leave += new System.EventHandler(this.txt_Cadencia_Leave);
             // 
-            // label3
+            // lbl_Cadência
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(390, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 19);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Cadência de tiro";
+            this.lbl_Cadência.AutoSize = true;
+            this.lbl_Cadência.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Cadência.Location = new System.Drawing.Point(390, 27);
+            this.lbl_Cadência.Name = "lbl_Cadência";
+            this.lbl_Cadência.Size = new System.Drawing.Size(109, 19);
+            this.lbl_Cadência.TabIndex = 20;
+            this.lbl_Cadência.Text = "Cadência de tiro";
             // 
-            // label4
+            // lbl_TipoMunição
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(572, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 19);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Tipo de munição";
+            this.lbl_TipoMunição.AutoSize = true;
+            this.lbl_TipoMunição.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TipoMunição.Location = new System.Drawing.Point(572, 27);
+            this.lbl_TipoMunição.Name = "lbl_TipoMunição";
+            this.lbl_TipoMunição.Size = new System.Drawing.Size(111, 19);
+            this.lbl_TipoMunição.TabIndex = 22;
+            this.lbl_TipoMunição.Text = "Tipo de munição";
             // 
             // cmb_Munição
             // 
@@ -280,15 +280,15 @@
             this.cmb_Munição.TabIndex = 24;
             this.cmb_Munição.SelectedIndexChanged += new System.EventHandler(this.cmb_Munição_SelectedIndexChanged);
             // 
-            // label5
+            // lbl_Data
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(739, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 19);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Data de fabricação";
+            this.lbl_Data.AutoSize = true;
+            this.lbl_Data.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Data.Location = new System.Drawing.Point(739, 27);
+            this.lbl_Data.Name = "lbl_Data";
+            this.lbl_Data.Size = new System.Drawing.Size(125, 19);
+            this.lbl_Data.TabIndex = 25;
+            this.lbl_Data.Text = "Data de fabricação";
             // 
             // dateTimePicker1
             // 
@@ -297,58 +297,67 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 27;
             // 
-            // button2
+            // btn_Cadastrar
             // 
-            this.button2.Location = new System.Drawing.Point(30, 146);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.BackColor = System.Drawing.Color.Green;
+            this.btn_Cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cadastrar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Cadastrar.Location = new System.Drawing.Point(30, 137);
+            this.btn_Cadastrar.Name = "btn_Cadastrar";
+            this.btn_Cadastrar.Size = new System.Drawing.Size(147, 32);
+            this.btn_Cadastrar.TabIndex = 28;
+            this.btn_Cadastrar.Text = "Cadastrar";
+            this.btn_Cadastrar.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(29, 99);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 22);
+            this.textBox1.Size = new System.Drawing.Size(914, 22);
             this.textBox1.TabIndex = 30;
             // 
-            // label6
+            // lbl_CódigoSerial
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 19);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Código serial";
+            this.lbl_CódigoSerial.AutoSize = true;
+            this.lbl_CódigoSerial.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CódigoSerial.Location = new System.Drawing.Point(26, 77);
+            this.lbl_CódigoSerial.Name = "lbl_CódigoSerial";
+            this.lbl_CódigoSerial.Size = new System.Drawing.Size(88, 19);
+            this.lbl_CódigoSerial.TabIndex = 29;
+            this.lbl_CódigoSerial.Text = "Código serial";
             // 
-            // button3
+            // btn_Editar
             // 
-            this.button3.Location = new System.Drawing.Point(135, 146);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Editar.BackColor = System.Drawing.Color.Olive;
+            this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Editar.Location = new System.Drawing.Point(202, 137);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(163, 32);
+            this.btn_Editar.TabIndex = 31;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_Deletar
             // 
-            this.button4.Location = new System.Drawing.Point(243, 146);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Deletar.BackColor = System.Drawing.Color.Maroon;
+            this.btn_Deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Deletar.Location = new System.Drawing.Point(393, 137);
+            this.btn_Deletar.Name = "btn_Deletar";
+            this.btn_Deletar.Size = new System.Drawing.Size(163, 32);
+            this.btn_Deletar.TabIndex = 32;
+            this.btn_Deletar.Text = "Deletar";
+            this.btn_Deletar.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btn_Cancelar
             // 
-            this.button5.Location = new System.Drawing.Point(346, 146);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 33;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancelar.Location = new System.Drawing.Point(576, 137);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(163, 32);
+            this.btn_Cancelar.TabIndex = 33;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = false;
             // 
             // Frm_ArmasEstoque
             // 
@@ -362,7 +371,7 @@
             this.Controls.Add(this.ssr_Footer);
             this.Controls.Add(this.mns_Menu);
             this.DoubleBuffered = true;
-            this.MinimumSize = new System.Drawing.Size(818, 497);
+            this.MinimumSize = new System.Drawing.Size(1088, 606);
             this.Name = "Frm_ArmasEstoque";
             this.Text = "Estoque de Armas";
             this.Load += new System.EventHandler(this.Frm_ArmasEstoque_Load);
@@ -372,7 +381,7 @@
             this.ssr_Footer.PerformLayout();
             this.grp_TelaEstoque.ResumeLayout(false);
             this.grp_TelaEstoque.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Armas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,24 +398,24 @@
         private System.Windows.Forms.ToolStripStatusLabel slbl_MensagemErro;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_TextoFooter;
         private System.Windows.Forms.GroupBox grp_TelaEstoque;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Armas;
         private System.Windows.Forms.TextBox txt_Pesquisa;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Pesquisar;
         private System.Windows.Forms.TextBox txt_Nome;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Nome;
         private System.Windows.Forms.TextBox txt_Cartucho;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Cartucho;
         private System.Windows.Forms.TextBox txt_Cadencia;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_Cadência;
         private System.Windows.Forms.ComboBox cmb_Munição;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_TipoMunição;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbl_Data;
+        private System.Windows.Forms.Button btn_Cadastrar;
+        private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_CódigoSerial;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Deletar;
     }
 }

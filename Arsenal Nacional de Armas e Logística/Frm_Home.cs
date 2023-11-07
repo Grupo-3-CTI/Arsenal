@@ -15,7 +15,8 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
     {
         Util Utilidade = new Util();
 
-        List<System.Windows.Forms.Label> Titulos = new List<System.Windows.Forms.Label>();
+        List<System.Windows.Forms.Label> Titulos = new List<System.Windows.
+            Forms.Label>();
         PrivateFontCollection pfc = new PrivateFontCollection();
         
         public frm_FormPrincipal()
@@ -57,15 +58,30 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         }
 
-        private void tsmi_Cadastro_Click(object sender, EventArgs e)
+        private void btn_Estoque_Click(object sender, EventArgs e)
         {
-
+            Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
+            form.ShowDialog();
         }
 
         private void btn_Armas_Click(object sender, EventArgs e)
         {
-            Frm_EstoqueArmas form = new Frm_EstoqueArmas();
+            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
             form.ShowDialog();
+            
+            
+        }
+
+        private void cadastroDeArmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
+            form.ShowDialog();
+            
+        }
+
+        private void cadastroDeMuniçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

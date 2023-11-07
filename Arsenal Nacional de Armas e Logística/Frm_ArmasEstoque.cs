@@ -36,10 +36,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             Utilidade.modificarTextoPlaceholder(ref txt_Pesquisa, "Pesquisar...", false);
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Frm_ArmasEstoque_Load(object sender, EventArgs e)
         {
@@ -49,7 +45,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void tsmi_Home_Click(object sender, EventArgs e)
         {
             frm_FormPrincipal form = new frm_FormPrincipal();
-            form.ShowDialog();
+            this.Close();
         }
 
         private void cmb_Munição_SelectedIndexChanged(object sender, EventArgs e)

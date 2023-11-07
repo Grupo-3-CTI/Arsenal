@@ -32,6 +32,11 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int tamanho);
         void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int tamanho);
 
+        /* Manipulação de textbox */
+
+        void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco);
+        void adicionarUnidadeDeMedida(ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool ganhouFoco);
+        void aceitarSomenteNumeros(object sender, KeyPressEventArgs e);
 
 
         /* Exibição de erros */
