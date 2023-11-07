@@ -354,7 +354,7 @@
             this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(1088, 606);
             this.Name = "Frm_MuniçãoEstoque";
-            this.Text = "Estoque de Armas";
+            this.Text = "Estoque de Munições";
             this.Load += new System.EventHandler(this.Frm_ArmasEstoque_Load);
             this.mns_Menu.ResumeLayout(false);
             this.mns_Menu.PerformLayout();

@@ -13,6 +13,10 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
     public partial class Frm_MuniçãoEstoque : Form
     {
         Util Utilidade = new Util();
+        int energia;
+        int peso;
+        int velocidade;
+        string texto;
 
         public Frm_MuniçãoEstoque()
         {
@@ -67,6 +71,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void txt_Velocidade_Leave(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Velocidade, "Velocidade em m/s", false);
+            tentarCalcularEnergia();
             Utilidade.adicionarUnidadeDeMedida(ref txt_Velocidade, "Velocidade em m/s", "m/s", false);
         }
         private void txt_Velocidade_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,6 +83,17 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             Utilidade.aceitarSomenteNumeros(sender, e);
         }
 
-
+        private void tentarCalcularEnergia()
+        {
+            if (Int32.TryParse() {
+                energia = Int32.Parse(txt_Peso.Text) * Int32.Parse(txt_Velocidade.Text);
+                texto = energia.ToString();
+                txt_Energia.Text = texto;
+            }
+            else
+            {
+                txt_Energia.Text = "(Cálculo automático)";
+            }
+        }
     }
 }
