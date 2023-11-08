@@ -173,6 +173,9 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         }
 
-        
+        private void mns_Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

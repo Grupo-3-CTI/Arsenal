@@ -122,6 +122,9 @@
     <Compile Include="IFerramentas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Ajuda.resx">
+      <DependentUpon>Frm_Ajuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_MuniçãoEstoque .resx">
       <DependentUpon>Frm_MuniçãoEstoque .cs</DependentUpon>
     </EmbeddedResource>
