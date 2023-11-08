@@ -1,7 +1,7 @@
 CREATE TABLE tbl_projetil (
     id SERIAL PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL,
     calibre VARCHAR(45) NOT NULL,
-    projetil VARCHAR(45) NOT NULL,
     velocidade INT NOT NULL,
     peso INT NOT NULL,
     energia numeric(10,2) NOT NULL
