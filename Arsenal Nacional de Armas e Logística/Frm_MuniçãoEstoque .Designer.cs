@@ -103,7 +103,7 @@
             this.tsmi_Home.Name = "tsmi_Home";
             this.tsmi_Home.Size = new System.Drawing.Size(49, 20);
             this.tsmi_Home.Text = "Voltar";
-            this.tsmi_Home.Click += new System.EventHandler(this.tsmi_Home_Click);
+            this.tsmi_Home.Click += new System.EventHandler(this.Tsmi_Home_Click);
             // 
             // ssr_Footer
             // 
@@ -216,7 +216,7 @@
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
             this.btn_Cancelar.Visible = false;
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            this.btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
             // btn_Deletar
             // 
@@ -230,7 +230,7 @@
             this.btn_Deletar.Text = "Deletar";
             this.btn_Deletar.UseVisualStyleBackColor = false;
             this.btn_Deletar.Visible = false;
-            this.btn_Deletar.Click += new System.EventHandler(this.btn_Deletar_Click);
+            this.btn_Deletar.Click += new System.EventHandler(this.Btn_Deletar_Click);
             // 
             // btn_Editar
             // 
@@ -244,7 +244,7 @@
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
             this.btn_Editar.Visible = false;
-            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
+            this.btn_Editar.Click += new System.EventHandler(this.Btn_Editar_Click);
             // 
             // btn_Cadastrar
             // 
@@ -258,7 +258,7 @@
             this.btn_Cadastrar.TabIndex = 28;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.UseVisualStyleBackColor = false;
-            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
+            this.btn_Cadastrar.Click += new System.EventHandler(this.Btn_Cadastrar_Click);
             // 
             // txt_Velocidade
             // 
@@ -269,9 +269,9 @@
             this.txt_Velocidade.Size = new System.Drawing.Size(123, 20);
             this.txt_Velocidade.TabIndex = 21;
             this.txt_Velocidade.Text = "Velocidade em m/s";
-            this.txt_Velocidade.Enter += new System.EventHandler(this.txt_Velocidade_Enter);
-            this.txt_Velocidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Velocidade_KeyPress);
-            this.txt_Velocidade.Leave += new System.EventHandler(this.txt_Velocidade_Leave);
+            this.txt_Velocidade.Enter += new System.EventHandler(this.Txt_Velocidade_Enter);
+            this.txt_Velocidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Velocidade_KeyPress);
+            this.txt_Velocidade.Leave += new System.EventHandler(this.Txt_Velocidade_Leave);
             // 
             // lbl_Velocidade
             // 
@@ -293,9 +293,9 @@
             this.txt_Peso.Size = new System.Drawing.Size(123, 20);
             this.txt_Peso.TabIndex = 19;
             this.txt_Peso.Text = "Peso em gramas";
-            this.txt_Peso.Enter += new System.EventHandler(this.txt_Peso_Enter);
-            this.txt_Peso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Peso_KeyPress);
-            this.txt_Peso.Leave += new System.EventHandler(this.txt_Peso_Leave);
+            this.txt_Peso.Enter += new System.EventHandler(this.Txt_Peso_Enter);
+            this.txt_Peso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Peso_KeyPress);
+            this.txt_Peso.Leave += new System.EventHandler(this.Txt_Peso_Leave);
             // 
             // lbl_Peso
             // 
@@ -338,7 +338,7 @@
             this.btn_Pesquisar.Size = new System.Drawing.Size(20, 21);
             this.btn_Pesquisar.TabIndex = 14;
             this.btn_Pesquisar.UseVisualStyleBackColor = true;
-            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
+            this.btn_Pesquisar.Click += new System.EventHandler(this.Btn_Pesquisar_Click);
             // 
             // dgv_Munições
             // 
@@ -367,7 +367,7 @@
             this.dgv_Munições.RowTemplate.Height = 24;
             this.dgv_Munições.Size = new System.Drawing.Size(694, 193);
             this.dgv_Munições.TabIndex = 13;
-            this.dgv_Munições.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Munições_RowHeaderMouseClick);
+            this.dgv_Munições.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dgv_Munições_RowHeaderMouseClick);
             // 
             // txt_Pesquisa
             // 
@@ -381,9 +381,9 @@
             this.txt_Pesquisa.Size = new System.Drawing.Size(672, 22);
             this.txt_Pesquisa.TabIndex = 0;
             this.txt_Pesquisa.Text = "Pesquisar...";
-            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.txt_Pesquisa_TextChanged_1);
-            this.txt_Pesquisa.Enter += new System.EventHandler(this.txt_Pesquisa_Enter);
-            this.txt_Pesquisa.Leave += new System.EventHandler(this.txt_Pesquisa_Leave);
+            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.Txt_Pesquisa_TextChanged_1);
+            this.txt_Pesquisa.Enter += new System.EventHandler(this.Txt_Pesquisa_Enter);
+            this.txt_Pesquisa.Leave += new System.EventHandler(this.Txt_Pesquisa_Leave);
             // 
             // Frm_MuniçãoEstoque
             // 

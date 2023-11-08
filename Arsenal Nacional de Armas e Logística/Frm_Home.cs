@@ -45,55 +45,41 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormTestes_Resize(object sender, EventArgs e)
         {
             Utilidade.usarFonteCustomizada(ref Titulos, capture_it);
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void btn_Estoque_Click(object sender, EventArgs e)
+        private void Btn_Estoque_Click(object sender, EventArgs e)
         {
             Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
             form.ShowDialog();
         }
 
-        private void btn_Armas_Click(object sender, EventArgs e)
+        private void Btn_Armas_Click(object sender, EventArgs e)
+        {
+            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
+            form.ShowDialog();
+        }
+
+
+        private void Btn_Ajuda_Click(object sender, EventArgs e)
+        {
+            Frm_Ajuda form = new Frm_Ajuda();
+            form.ShowDialog();
+        }
+
+        private void CadastroDeArmasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_ArmasEstoque form = new Frm_ArmasEstoque();
             form.ShowDialog();
 
-
         }
 
-        private void cadastroDeArmasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
-            form.ShowDialog();
-
-        }
-
-        private void cadastroDeMuniçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CadastroDeMuniçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }

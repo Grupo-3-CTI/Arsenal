@@ -104,7 +104,7 @@
             this.tsmi_Home.Name = "tsmi_Home";
             this.tsmi_Home.Size = new System.Drawing.Size(49, 20);
             this.tsmi_Home.Text = "Voltar";
-            this.tsmi_Home.Click += new System.EventHandler(this.tsmi_Home_Click);
+            this.tsmi_Home.Click += new System.EventHandler(this.Tsmi_Home_Click);
             // 
             // ssr_Footer
             // 
@@ -156,10 +156,10 @@
             this.grp_TelaEstoque.Controls.Add(this.txt_Pesquisa);
             this.grp_TelaEstoque.ForeColor = System.Drawing.Color.White;
             this.grp_TelaEstoque.Location = new System.Drawing.Point(20, 41);
-            this.grp_TelaEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grp_TelaEstoque.Margin = new System.Windows.Forms.Padding(2);
             this.grp_TelaEstoque.MinimumSize = new System.Drawing.Size(762, 365);
             this.grp_TelaEstoque.Name = "grp_TelaEstoque";
-            this.grp_TelaEstoque.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grp_TelaEstoque.Padding = new System.Windows.Forms.Padding(2);
             this.grp_TelaEstoque.Size = new System.Drawing.Size(762, 365);
             this.grp_TelaEstoque.TabIndex = 12;
             this.grp_TelaEstoque.TabStop = false;
@@ -170,41 +170,44 @@
             this.btn_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Location = new System.Drawing.Point(432, 111);
-            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(122, 26);
             this.btn_Cancelar.TabIndex = 33;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
+            this.btn_Cancelar.Visible = false;
             // 
             // btn_Deletar
             // 
             this.btn_Deletar.BackColor = System.Drawing.Color.Maroon;
             this.btn_Deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Deletar.Location = new System.Drawing.Point(295, 111);
-            this.btn_Deletar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Deletar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Deletar.Name = "btn_Deletar";
             this.btn_Deletar.Size = new System.Drawing.Size(122, 26);
             this.btn_Deletar.TabIndex = 32;
             this.btn_Deletar.Text = "Deletar";
             this.btn_Deletar.UseVisualStyleBackColor = false;
+            this.btn_Deletar.Visible = false;
             // 
             // btn_Editar
             // 
             this.btn_Editar.BackColor = System.Drawing.Color.Olive;
             this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Editar.Location = new System.Drawing.Point(152, 111);
-            this.btn_Editar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Editar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(122, 26);
             this.btn_Editar.TabIndex = 31;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Visible = false;
             // 
             // txt_codigoSerial
             // 
             this.txt_codigoSerial.Location = new System.Drawing.Point(22, 80);
-            this.txt_codigoSerial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_codigoSerial.Margin = new System.Windows.Forms.Padding(2);
             this.txt_codigoSerial.Name = "txt_codigoSerial";
             this.txt_codigoSerial.Size = new System.Drawing.Size(686, 20);
             this.txt_codigoSerial.TabIndex = 30;
@@ -226,18 +229,18 @@
             this.btn_Cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cadastrar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Cadastrar.Location = new System.Drawing.Point(22, 111);
-            this.btn_Cadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cadastrar.Name = "btn_Cadastrar";
             this.btn_Cadastrar.Size = new System.Drawing.Size(110, 26);
             this.btn_Cadastrar.TabIndex = 28;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.UseVisualStyleBackColor = false;
-            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_click);
+            this.btn_Cadastrar.Click += new System.EventHandler(this.Btn_Cadastrar_click);
             // 
             // dtp_DataFabricacao
             // 
             this.dtp_DataFabricacao.Location = new System.Drawing.Point(557, 40);
-            this.dtp_DataFabricacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtp_DataFabricacao.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_DataFabricacao.Name = "dtp_DataFabricacao";
             this.dtp_DataFabricacao.Size = new System.Drawing.Size(151, 20);
             this.dtp_DataFabricacao.TabIndex = 27;
@@ -257,11 +260,11 @@
             // 
             this.cmb_Munição.FormattingEnabled = true;
             this.cmb_Munição.Location = new System.Drawing.Point(432, 40);
-            this.cmb_Munição.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Munição.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Munição.Name = "cmb_Munição";
             this.cmb_Munição.Size = new System.Drawing.Size(102, 21);
             this.cmb_Munição.TabIndex = 24;
-            this.cmb_Munição.SelectedIndexChanged += new System.EventHandler(this.cmb_Munição_SelectedIndexChanged);
+            this.cmb_Munição.SelectedIndexChanged += new System.EventHandler(this.Cmb_Munição_SelectedIndexChanged);
             // 
             // lbl_TipoMunição
             // 
@@ -278,14 +281,14 @@
             // 
             this.txt_Cadencia.ForeColor = System.Drawing.Color.DimGray;
             this.txt_Cadencia.Location = new System.Drawing.Point(295, 40);
-            this.txt_Cadencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Cadencia.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Cadencia.Name = "txt_Cadencia";
             this.txt_Cadencia.Size = new System.Drawing.Size(116, 20);
             this.txt_Cadencia.TabIndex = 21;
             this.txt_Cadencia.Text = "Tiros por segundo aqui...";
-            this.txt_Cadencia.Enter += new System.EventHandler(this.txt_Cadencia_Enter);
-            this.txt_Cadencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cadencia_KeyPress);
-            this.txt_Cadencia.Leave += new System.EventHandler(this.txt_Cadencia_Leave);
+            this.txt_Cadencia.Enter += new System.EventHandler(this.Txt_Cadencia_Enter);
+            this.txt_Cadencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cadencia_KeyPress);
+            this.txt_Cadencia.Leave += new System.EventHandler(this.Txt_Cadencia_Leave);
             // 
             // lbl_Cadência
             // 
@@ -302,14 +305,14 @@
             // 
             this.txt_Cartucho.ForeColor = System.Drawing.Color.DimGray;
             this.txt_Cartucho.Location = new System.Drawing.Point(152, 40);
-            this.txt_Cartucho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Cartucho.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Cartucho.Name = "txt_Cartucho";
             this.txt_Cartucho.Size = new System.Drawing.Size(123, 20);
             this.txt_Cartucho.TabIndex = 19;
             this.txt_Cartucho.Text = "Balas por cartucho aqui...";
-            this.txt_Cartucho.Enter += new System.EventHandler(this.txt_Cartucho_Enter);
-            this.txt_Cartucho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cartucho_KeyPress);
-            this.txt_Cartucho.Leave += new System.EventHandler(this.txt_Cartucho_Leave);
+            this.txt_Cartucho.Enter += new System.EventHandler(this.Txt_Cartucho_Enter);
+            this.txt_Cartucho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cartucho_KeyPress);
+            this.txt_Cartucho.Leave += new System.EventHandler(this.Txt_Cartucho_Leave);
             // 
             // lbl_Cartucho
             // 
@@ -325,7 +328,7 @@
             // txt_Nome
             // 
             this.txt_Nome.Location = new System.Drawing.Point(22, 40);
-            this.txt_Nome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Nome.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Nome.Name = "txt_Nome";
             this.txt_Nome.Size = new System.Drawing.Size(112, 20);
             this.txt_Nome.TabIndex = 17;
@@ -347,7 +350,7 @@
             this.btn_Pesquisar.BackgroundImage = global::Arsenal_Nacional_de_Armas_e_Logística.Properties.Resources.Pesquisar;
             this.btn_Pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Pesquisar.Location = new System.Drawing.Point(697, 152);
-            this.btn_Pesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Pesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Pesquisar.Name = "btn_Pesquisar";
             this.btn_Pesquisar.Size = new System.Drawing.Size(20, 21);
             this.btn_Pesquisar.TabIndex = 14;
@@ -363,13 +366,14 @@
             this.dgv_Armas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Armas.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_Armas.Location = new System.Drawing.Point(22, 185);
-            this.dgv_Armas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Armas.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Armas.Name = "dgv_Armas";
             this.dgv_Armas.ReadOnly = true;
             this.dgv_Armas.RowHeadersWidth = 51;
             this.dgv_Armas.RowTemplate.Height = 24;
             this.dgv_Armas.Size = new System.Drawing.Size(694, 167);
             this.dgv_Armas.TabIndex = 13;
+            this.dgv_Armas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dgv_Armas_RowHeaderMouseClick);
             // 
             // txt_Pesquisa
             // 
@@ -378,14 +382,14 @@
             this.txt_Pesquisa.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Pesquisa.ForeColor = System.Drawing.Color.DimGray;
             this.txt_Pesquisa.Location = new System.Drawing.Point(22, 152);
-            this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.Size = new System.Drawing.Size(672, 22);
             this.txt_Pesquisa.TabIndex = 0;
             this.txt_Pesquisa.Text = "Pesquisar...";
-            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.txt_Pesquisa_TextChanged_1);
-            this.txt_Pesquisa.Enter += new System.EventHandler(this.txt_Pesquisa_Enter);
-            this.txt_Pesquisa.Leave += new System.EventHandler(this.txt_Pesquisa_Leave);
+            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.Txt_Pesquisa_TextChanged_1);
+            this.txt_Pesquisa.Enter += new System.EventHandler(this.Txt_Pesquisa_Enter);
+            this.txt_Pesquisa.Leave += new System.EventHandler(this.Txt_Pesquisa_Leave);
             // 
             // Frm_ArmasEstoque
             // 
@@ -399,7 +403,7 @@
             this.Controls.Add(this.ssr_Footer);
             this.Controls.Add(this.mns_Menu);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(820, 500);
             this.Name = "Frm_ArmasEstoque";
             this.Text = "Estoque de Armas";

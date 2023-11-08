@@ -21,7 +21,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public NpgsqlConnection ConectarComDB()
         {
-            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=123; Database=projeto_2b; Pooling=true;");
+            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=postgres; Database=arsenal; Pooling=true;");
         }
         public void fillDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {

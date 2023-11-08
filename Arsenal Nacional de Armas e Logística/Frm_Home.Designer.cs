@@ -33,6 +33,7 @@
             this.lbl_titulo2 = new System.Windows.Forms.Label();
             this.lbl_titulo3 = new System.Windows.Forms.Label();
             this.grp_Opções = new System.Windows.Forms.GroupBox();
+            this.btn_Ajuda = new System.Windows.Forms.Button();
             this.btn_Estoque = new System.Windows.Forms.Button();
             this.btn_Armas = new System.Windows.Forms.Button();
             this.mns_Menu = new System.Windows.Forms.MenuStrip();
@@ -55,12 +56,12 @@
             this.lbl_titulo1.BackColor = System.Drawing.Color.Transparent;
             this.lbl_titulo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo1.ForeColor = System.Drawing.Color.FloralWhite;
-            this.lbl_titulo1.Location = new System.Drawing.Point(183, 38);
+            this.lbl_titulo1.Location = new System.Drawing.Point(137, 31);
+            this.lbl_titulo1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_titulo1.Name = "lbl_titulo1";
-            this.lbl_titulo1.Size = new System.Drawing.Size(466, 51);
+            this.lbl_titulo1.Size = new System.Drawing.Size(372, 39);
             this.lbl_titulo1.TabIndex = 0;
             this.lbl_titulo1.Text = "ARSENAL NACIONAL ";
-            this.lbl_titulo1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl_titulo2
             // 
@@ -70,12 +71,12 @@
             this.lbl_titulo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo2.ForeColor = System.Drawing.Color.FloralWhite;
             this.lbl_titulo2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_titulo2.Location = new System.Drawing.Point(148, 106);
+            this.lbl_titulo2.Location = new System.Drawing.Point(111, 86);
+            this.lbl_titulo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_titulo2.Name = "lbl_titulo2";
-            this.lbl_titulo2.Size = new System.Drawing.Size(527, 51);
+            this.lbl_titulo2.Size = new System.Drawing.Size(421, 39);
             this.lbl_titulo2.TabIndex = 6;
             this.lbl_titulo2.Text = "DE ARMAS E LOGÍSTICA";
-            this.lbl_titulo2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbl_titulo3
             // 
@@ -85,27 +86,47 @@
             this.lbl_titulo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo3.ForeColor = System.Drawing.Color.FloralWhite;
             this.lbl_titulo3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_titulo3.Location = new System.Drawing.Point(226, 367);
-            this.lbl_titulo3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lbl_titulo3.Location = new System.Drawing.Point(170, 298);
+            this.lbl_titulo3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
             this.lbl_titulo3.Name = "lbl_titulo3";
-            this.lbl_titulo3.Size = new System.Drawing.Size(386, 51);
+            this.lbl_titulo3.Size = new System.Drawing.Size(309, 39);
             this.lbl_titulo3.TabIndex = 7;
             this.lbl_titulo3.Text = "SEJA BEM-VINDO";
-            this.lbl_titulo3.Click += new System.EventHandler(this.label3_Click);
             // 
             // grp_Opções
             // 
             this.grp_Opções.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grp_Opções.Controls.Add(this.btn_Ajuda);
             this.grp_Opções.Controls.Add(this.btn_Estoque);
             this.grp_Opções.Controls.Add(this.btn_Armas);
             this.grp_Opções.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_Opções.ForeColor = System.Drawing.Color.MintCream;
-            this.grp_Opções.Location = new System.Drawing.Point(62, 178);
+            this.grp_Opções.Location = new System.Drawing.Point(46, 145);
+            this.grp_Opções.Margin = new System.Windows.Forms.Padding(2);
             this.grp_Opções.Name = "grp_Opções";
-            this.grp_Opções.Size = new System.Drawing.Size(691, 127);
+            this.grp_Opções.Padding = new System.Windows.Forms.Padding(2);
+            this.grp_Opções.Size = new System.Drawing.Size(518, 103);
             this.grp_Opções.TabIndex = 8;
             this.grp_Opções.TabStop = false;
             this.grp_Opções.Text = "Opções";
+            // 
+            // btn_Ajuda
+            // 
+            this.btn_Ajuda.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_Ajuda.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Ajuda.FlatAppearance.BorderSize = 2;
+            this.btn_Ajuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_Ajuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ajuda.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ajuda.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_Ajuda.Location = new System.Drawing.Point(371, 17);
+            this.btn_Ajuda.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Ajuda.Name = "btn_Ajuda";
+            this.btn_Ajuda.Size = new System.Drawing.Size(143, 81);
+            this.btn_Ajuda.TabIndex = 2;
+            this.btn_Ajuda.Text = "Ajuda";
+            this.btn_Ajuda.UseVisualStyleBackColor = false;
+            this.btn_Ajuda.Click += new System.EventHandler(this.Btn_Ajuda_Click);
             // 
             // btn_Estoque
             // 
@@ -116,13 +137,14 @@
             this.btn_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Estoque.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Estoque.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_Estoque.Location = new System.Drawing.Point(396, 21);
+            this.btn_Estoque.Location = new System.Drawing.Point(187, 17);
+            this.btn_Estoque.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Estoque.Name = "btn_Estoque";
-            this.btn_Estoque.Size = new System.Drawing.Size(191, 100);
+            this.btn_Estoque.Size = new System.Drawing.Size(143, 81);
             this.btn_Estoque.TabIndex = 1;
             this.btn_Estoque.Text = "Estoque de munições";
             this.btn_Estoque.UseVisualStyleBackColor = false;
-            this.btn_Estoque.Click += new System.EventHandler(this.btn_Estoque_Click);
+            this.btn_Estoque.Click += new System.EventHandler(this.Btn_Estoque_Click);
             // 
             // btn_Armas
             // 
@@ -133,13 +155,14 @@
             this.btn_Armas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Armas.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Armas.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_Armas.Location = new System.Drawing.Point(130, 21);
+            this.btn_Armas.Location = new System.Drawing.Point(4, 17);
+            this.btn_Armas.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Armas.Name = "btn_Armas";
-            this.btn_Armas.Size = new System.Drawing.Size(191, 100);
+            this.btn_Armas.Size = new System.Drawing.Size(143, 81);
             this.btn_Armas.TabIndex = 0;
             this.btn_Armas.Text = "Estoque de armas";
             this.btn_Armas.UseVisualStyleBackColor = false;
-            this.btn_Armas.Click += new System.EventHandler(this.btn_Armas_Click);
+            this.btn_Armas.Click += new System.EventHandler(this.Btn_Armas_Click);
             // 
             // mns_Menu
             // 
@@ -149,7 +172,8 @@
             this.tsmi_Cadastro});
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
-            this.mns_Menu.Size = new System.Drawing.Size(800, 28);
+            this.mns_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.mns_Menu.Size = new System.Drawing.Size(602, 24);
             this.mns_Menu.TabIndex = 9;
             this.mns_Menu.Text = "menuStrip1";
             // 
@@ -159,24 +183,24 @@
             this.tsmi_Cadastro_Armas,
             this.tsmi_Cadastro_Munições});
             this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 24);
+            this.tsmi_Cadastro.Size = new System.Drawing.Size(66, 20);
             this.tsmi_Cadastro.Text = "Cadastro";
             // 
             // tsmi_Cadastro_Armas
             // 
             this.tsmi_Cadastro_Armas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsmi_Cadastro_Armas.Name = "tsmi_Cadastro_Armas";
-            this.tsmi_Cadastro_Armas.Size = new System.Drawing.Size(239, 26);
+            this.tsmi_Cadastro_Armas.Size = new System.Drawing.Size(192, 22);
             this.tsmi_Cadastro_Armas.Text = "Cadastro de Armas";
-            this.tsmi_Cadastro_Armas.Click += new System.EventHandler(this.cadastroDeArmasToolStripMenuItem_Click);
+            this.tsmi_Cadastro_Armas.Click += new System.EventHandler(this.CadastroDeArmasToolStripMenuItem_Click);
             // 
             // tsmi_Cadastro_Munições
             // 
             this.tsmi_Cadastro_Munições.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsmi_Cadastro_Munições.Name = "tsmi_Cadastro_Munições";
-            this.tsmi_Cadastro_Munições.Size = new System.Drawing.Size(239, 26);
+            this.tsmi_Cadastro_Munições.Size = new System.Drawing.Size(192, 22);
             this.tsmi_Cadastro_Munições.Text = "Cadastro de Munições";
-            this.tsmi_Cadastro_Munições.Click += new System.EventHandler(this.cadastroDeMuniçõesToolStripMenuItem_Click);
+            this.tsmi_Cadastro_Munições.Click += new System.EventHandler(this.CadastroDeMuniçõesToolStripMenuItem_Click);
             // 
             // ssr_Footer
             // 
@@ -186,16 +210,17 @@
             this.slbl_MensagemErro,
             this.toolStripStatusLabel1,
             this.tslbl_TextoFooter});
-            this.ssr_Footer.Location = new System.Drawing.Point(0, 424);
+            this.ssr_Footer.Location = new System.Drawing.Point(0, 350);
             this.ssr_Footer.Name = "ssr_Footer";
-            this.ssr_Footer.Size = new System.Drawing.Size(800, 26);
+            this.ssr_Footer.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.ssr_Footer.Size = new System.Drawing.Size(602, 22);
             this.ssr_Footer.TabIndex = 12;
             // 
             // slbl_MensagemErro
             // 
             this.slbl_MensagemErro.ForeColor = System.Drawing.Color.FloralWhite;
             this.slbl_MensagemErro.Name = "slbl_MensagemErro";
-            this.slbl_MensagemErro.Size = new System.Drawing.Size(0, 20);
+            this.slbl_MensagemErro.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStripStatusLabel1
             // 
@@ -203,24 +228,24 @@
             this.toolStripStatusLabel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // tslbl_TextoFooter
             // 
             this.tslbl_TextoFooter.ForeColor = System.Drawing.Color.White;
             this.tslbl_TextoFooter.Name = "tslbl_TextoFooter";
-            this.tslbl_TextoFooter.Size = new System.Drawing.Size(180, 20);
+            this.tslbl_TextoFooter.Size = new System.Drawing.Size(145, 17);
             this.tslbl_TextoFooter.Text = "Nenhum erro encontrado!";
             // 
             // frm_FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(29)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(602, 372);
             this.Controls.Add(this.ssr_Footer);
             this.Controls.Add(this.grp_Opções);
             this.Controls.Add(this.lbl_titulo3);
@@ -229,7 +254,8 @@
             this.Controls.Add(this.mns_Menu);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.mns_Menu;
-            this.MinimumSize = new System.Drawing.Size(818, 497);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(618, 411);
             this.Name = "frm_FormPrincipal";
             this.Text = "Form Principal";
             this.Resize += new System.EventHandler(this.FormTestes_Resize);
@@ -259,5 +285,6 @@
         private System.Windows.Forms.ToolStripStatusLabel slbl_MensagemErro;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_TextoFooter;
+        private System.Windows.Forms.Button btn_Ajuda;
     }
 }

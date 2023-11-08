@@ -94,6 +94,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ajuda.Designer.cs">
+      <DependentUpon>Frm_Ajuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MuniçãoEstoque .cs">
       <SubType>Form</SubType>
     </Compile>

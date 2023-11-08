@@ -19,7 +19,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private int velocidade;
         private double peso;
         private string textoEnergia;
-        private int ID = 0;
+        private int ID;
         private string query = "";
         NpgsqlConnection conexao;
 
@@ -31,17 +31,17 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             Utilidade.fillDataGrid("", conexao, dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
         }
 
-        private void txt_Pesquisa_TextChanged_1(object sender, EventArgs e)
+        private void Txt_Pesquisa_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void txt_Pesquisa_Enter(object sender, EventArgs e)
+        private void Txt_Pesquisa_Enter(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Pesquisa, "Pesquisar...", true);
         }
 
-        private void txt_Pesquisa_Leave(object sender, EventArgs e)
+        private void Txt_Pesquisa_Leave(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Pesquisa, "Pesquisar...", false);
         }
@@ -52,57 +52,57 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         }
 
-        private void tsmi_Home_Click(object sender, EventArgs e)
+        private void Tsmi_Home_Click(object sender, EventArgs e)
         {
             frm_FormPrincipal form = new frm_FormPrincipal();
             this.Close();
         }
-        private void txt_Peso_Enter(object sender, EventArgs e)
+        private void Txt_Peso_Enter(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Peso, "Peso em gramas", true);
             Utilidade.modificarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", true);
         }
 
 
-        private void txt_Peso_Leave(object sender, EventArgs e)
+        private void Txt_Peso_Leave(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Peso, "Peso em gramas", false);
             if (double.TryParse(Utilidade.modificarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", false), out peso))
             {
-                tentarCalcularEnergia();
+                TentarCalcularEnergia();
             } else
             {
                 Utilidade.mostrarErro("Peso inválido!", ref tslbl_TextoFooter);
             }
         }
 
-        private void txt_Velocidade_Enter(object sender, EventArgs e)
+        private void Txt_Velocidade_Enter(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Velocidade, "Velocidade em m/s", true);
             Utilidade.modificarUnidadeDeMedida(ref txt_Velocidade, "Velocidade em m/s", "m/s", true);
         }
-        private void txt_Velocidade_Leave(object sender, EventArgs e)
+        private void Txt_Velocidade_Leave(object sender, EventArgs e)
         {
             Utilidade.modificarTextoPlaceholder(ref txt_Velocidade, "Velocidade em m/s", false);
             if (int.TryParse(Utilidade.modificarUnidadeDeMedida(ref txt_Velocidade, "Velocidade em m/s", "m/s", false), out velocidade))
             {
-                tentarCalcularEnergia();
+                TentarCalcularEnergia();
             }
             else
             {
                 Utilidade.mostrarErro("Velocidade inválida!", ref tslbl_TextoFooter);
             }
         }
-        private void txt_Velocidade_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_Velocidade_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilidade.aceitarSomenteNumeros(sender, e);
         }
-        private void txt_Peso_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_Peso_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilidade.aceitarSomenteNumeros(sender, e);
         }
 
-        private void tentarCalcularEnergia()
+        private void TentarCalcularEnergia()
         {
 
             if (velocidade > 0 && peso > 0) {
@@ -117,23 +117,23 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
         }
 
-        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        private void Btn_Cadastrar_Click(object sender, EventArgs e)
         {
             Cadastrar();
         }
-        private void btn_Deletar_Click(object sender, EventArgs e)
+        private void Btn_Deletar_Click(object sender, EventArgs e)
         {
             Deletar();
         }
-        private void btn_Editar_Click(object sender, EventArgs e)
+        private void Btn_Editar_Click(object sender, EventArgs e)
         {
             Editar();
         }
-        private void dgv_Munições_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void Dgv_Munições_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                this.ID = (int)dgv_Munições.SelectedRows[0].Cells[0].Value;
+                ID = (int)dgv_Munições.SelectedRows[0].Cells[0].Value;
 
                 var calibre = dgv_Munições.SelectedRows[0].Cells[1].Value;
                 var nome = dgv_Munições.SelectedRows[0].Cells[2].Value;
@@ -164,7 +164,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
+        private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             Limpar();
         }
@@ -175,7 +175,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             {
                 if (Utilidade.respondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa munição?"))
                 {
-                    string query = $"INSERT INTO tbl_projetil (projetil, peso, velocidade, calibre, energia) VALUES ('{txt_Nome.Text}', '{peso}', '{velocidade}', '{txt_Calibre.Text}', '{energia.ToString(CultureInfo.InvariantCulture)}')";
+                    string query = $"INSERT INTO tbl_projetil (nome, peso, velocidade, calibre, energia) VALUES ('{txt_Nome.Text}', '{peso}', '{velocidade}', '{txt_Calibre.Text}', '{energia.ToString(CultureInfo.InvariantCulture)}')";
                     Utilidade.executarComandoDB(query, conexao, ref tslbl_TextoFooter);
                     Utilidade.fillDataGrid(query, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
                 }
@@ -187,7 +187,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public void Deletar()
         {
-            if (Utilidade.respondeuSimParaPopup("Confirmação", "Tem certeza que deseja deletar essa munição?"))
+            if (Utilidade.respondeuSimParaPopup("Confirmação", "ATENÇÃO, SOLDADO! TEM CERTEZA QUE DESEJA DELETAR ESSA MUNIÇÃO? ESSA AÇÃO É IRREVERSÍVEL"))
             {
                 string query = $"DELETE FROM tbl_projetil WHERE id = {ID}";
                 Utilidade.executarComandoDB(query, conexao, ref tslbl_TextoFooter);
@@ -200,7 +200,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             {
                 if (Utilidade.respondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa munição?"))
                 {
-                    string query = $"UPDATE tbl_projetil SET projetil = '{txt_Nome.Text}', peso = '{peso}', velocidade = '{velocidade}', calibre = '{txt_Calibre.Text}', energia = '{energia.ToString(CultureInfo.InvariantCulture)}' WHERE id = {ID}";
+                    string query = $"UPDATE tbl_projetil SET nome = '{txt_Nome.Text}', peso = '{peso}', velocidade = '{velocidade}', calibre = '{txt_Calibre.Text}', energia = '{energia.ToString(CultureInfo.InvariantCulture)}' WHERE id = {ID}";
                     Utilidade.executarComandoDB(query, conexao, ref tslbl_TextoFooter);
                     Utilidade.fillDataGrid(query, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
                     
@@ -230,9 +230,9 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         }
 
-        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        private void Btn_Pesquisar_Click(object sender, EventArgs e)
         {
-            query = $"SELECT * FROM tbl_projetil WHERE lower(projetil) LIKE lower('%{txt_Pesquisa.Text}%')";
+            query = String.IsNullOrEmpty(txt_Pesquisa.Text) ? "" : $"SELECT * FROM tbl_projetil WHERE lower(nome) LIKE lower('%{txt_Pesquisa.Text}%')";
             Utilidade.fillDataGrid(query, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
         }
     }
