@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.grp_Ajuda = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Título_Ajuda = new System.Windows.Forms.Label();
             this.grp_Linha = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Ellen = new System.Windows.Forms.Label();
             this.lbl_Emily = new System.Windows.Forms.Label();
             this.lbl_Fernando = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Carraro = new System.Windows.Forms.Label();
+            this.lbl_Menegazzo = new System.Windows.Forms.Label();
+            this.lbl_PrecisaDeAjuda = new System.Windows.Forms.Label();
+            this.lbl_Contato = new System.Windows.Forms.Label();
             this.llb_Email_Fernando = new System.Windows.Forms.LinkLabel();
             this.mns_Menu = new System.Windows.Forms.MenuStrip();
             this.tsmi_Cadastro = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,16 +57,16 @@
             // 
             this.grp_Ajuda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grp_Ajuda.Controls.Add(this.llb_Email_Fernando);
-            this.grp_Ajuda.Controls.Add(this.label4);
-            this.grp_Ajuda.Controls.Add(this.label3);
-            this.grp_Ajuda.Controls.Add(this.label6);
-            this.grp_Ajuda.Controls.Add(this.label5);
+            this.grp_Ajuda.Controls.Add(this.lbl_Contato);
+            this.grp_Ajuda.Controls.Add(this.lbl_PrecisaDeAjuda);
+            this.grp_Ajuda.Controls.Add(this.lbl_Menegazzo);
+            this.grp_Ajuda.Controls.Add(this.lbl_Carraro);
             this.grp_Ajuda.Controls.Add(this.lbl_Fernando);
             this.grp_Ajuda.Controls.Add(this.lbl_Emily);
             this.grp_Ajuda.Controls.Add(this.lbl_Ellen);
             this.grp_Ajuda.Controls.Add(this.label2);
             this.grp_Ajuda.Controls.Add(this.grp_Linha);
-            this.grp_Ajuda.Controls.Add(this.label1);
+            this.grp_Ajuda.Controls.Add(this.lbl_Título_Ajuda);
             this.grp_Ajuda.ForeColor = System.Drawing.Color.White;
             this.grp_Ajuda.Location = new System.Drawing.Point(12, 49);
             this.grp_Ajuda.Name = "grp_Ajuda";
@@ -75,15 +75,15 @@
             this.grp_Ajuda.TabStop = false;
             this.grp_Ajuda.Text = "Ajuda";
             // 
-            // label1
+            // lbl_Título_Ajuda
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(119, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(522, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "== Arsenal Nacional de Armas e Logística - Ajuda ==";
+            this.lbl_Título_Ajuda.AutoSize = true;
+            this.lbl_Título_Ajuda.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Título_Ajuda.Location = new System.Drawing.Point(119, 18);
+            this.lbl_Título_Ajuda.Name = "lbl_Título_Ajuda";
+            this.lbl_Título_Ajuda.Size = new System.Drawing.Size(522, 27);
+            this.lbl_Título_Ajuda.TabIndex = 0;
+            this.lbl_Título_Ajuda.Text = "== Arsenal Nacional de Armas e Logística - Ajuda ==";
             // 
             // grp_Linha
             // 
@@ -135,45 +135,45 @@
             this.lbl_Fernando.Text = "13 - Fernando Ellerbrock Theodoro";
             this.lbl_Fernando.Click += new System.EventHandler(this.lbl_Fernando_Click);
             // 
-            // label5
+            // lbl_Carraro
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(414, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(217, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "14 - Gabriel Carraro Salzedas";
+            this.lbl_Carraro.AutoSize = true;
+            this.lbl_Carraro.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Carraro.Location = new System.Drawing.Point(414, 112);
+            this.lbl_Carraro.Name = "lbl_Carraro";
+            this.lbl_Carraro.Size = new System.Drawing.Size(217, 20);
+            this.lbl_Carraro.TabIndex = 6;
+            this.lbl_Carraro.Text = "14 - Gabriel Carraro Salzedas";
             // 
-            // label6
+            // lbl_Menegazzo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(414, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 20);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "15 - Gabriel Eugênio Menegazzo";
+            this.lbl_Menegazzo.AutoSize = true;
+            this.lbl_Menegazzo.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Menegazzo.Location = new System.Drawing.Point(414, 152);
+            this.lbl_Menegazzo.Name = "lbl_Menegazzo";
+            this.lbl_Menegazzo.Size = new System.Drawing.Size(244, 20);
+            this.lbl_Menegazzo.TabIndex = 7;
+            this.lbl_Menegazzo.Text = "15 - Gabriel Eugênio Menegazzo";
             // 
-            // label3
+            // lbl_PrecisaDeAjuda
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(267, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 27);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "PRECISA DE AJUDA?";
+            this.lbl_PrecisaDeAjuda.AutoSize = true;
+            this.lbl_PrecisaDeAjuda.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PrecisaDeAjuda.Location = new System.Drawing.Point(267, 253);
+            this.lbl_PrecisaDeAjuda.Name = "lbl_PrecisaDeAjuda";
+            this.lbl_PrecisaDeAjuda.Size = new System.Drawing.Size(216, 27);
+            this.lbl_PrecisaDeAjuda.TabIndex = 8;
+            this.lbl_PrecisaDeAjuda.Text = "PRECISA DE AJUDA?";
             // 
-            // label4
+            // lbl_Contato
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(212, 311);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(338, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Contate-nos através dos nosso E-mail!";
+            this.lbl_Contato.AutoSize = true;
+            this.lbl_Contato.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Contato.Location = new System.Drawing.Point(205, 297);
+            this.lbl_Contato.Name = "lbl_Contato";
+            this.lbl_Contato.Size = new System.Drawing.Size(338, 24);
+            this.lbl_Contato.TabIndex = 9;
+            this.lbl_Contato.Text = "Contate-nos através dos nosso E-mail!";
             // 
             // llb_Email_Fernando
             // 
@@ -182,7 +182,7 @@
             this.llb_Email_Fernando.BackColor = System.Drawing.Color.Transparent;
             this.llb_Email_Fernando.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb_Email_Fernando.LinkColor = System.Drawing.Color.Lime;
-            this.llb_Email_Fernando.Location = new System.Drawing.Point(227, 351);
+            this.llb_Email_Fernando.Location = new System.Drawing.Point(227, 348);
             this.llb_Email_Fernando.Name = "llb_Email_Fernando";
             this.llb_Email_Fernando.Size = new System.Drawing.Size(298, 27);
             this.llb_Email_Fernando.TabIndex = 10;
@@ -211,8 +211,8 @@
             this.tsmi_Cadastro_Armas,
             this.tsmi_Cadastro_Munições});
             this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 24);
-            this.tsmi_Cadastro.Text = "Cadastro";
+            this.tsmi_Cadastro.Size = new System.Drawing.Size(88, 24);
+            this.tsmi_Cadastro.Text = "Cadastros";
             // 
             // tsmi_Cadastro_Armas
             // 
@@ -293,17 +293,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grp_Ajuda;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Título_Ajuda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grp_Linha;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_PrecisaDeAjuda;
+        private System.Windows.Forms.Label lbl_Menegazzo;
+        private System.Windows.Forms.Label lbl_Carraro;
         private System.Windows.Forms.Label lbl_Fernando;
         private System.Windows.Forms.Label lbl_Emily;
         private System.Windows.Forms.Label lbl_Ellen;
         private System.Windows.Forms.LinkLabel llb_Email_Fernando;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_Contato;
         private System.Windows.Forms.MenuStrip mns_Menu;
         private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro;
         private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro_Armas;

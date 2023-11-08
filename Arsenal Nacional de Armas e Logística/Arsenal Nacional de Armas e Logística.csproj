@@ -118,6 +118,7 @@
     <Compile Include="Frm_Home.Designer.cs">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="IFerramentas.cs" />
     <Compile Include="Program.cs" />

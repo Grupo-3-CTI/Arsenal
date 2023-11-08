@@ -104,7 +104,7 @@
             this.grp_Opções.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grp_Opções.Name = "grp_Opções";
             this.grp_Opções.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grp_Opções.Size = new System.Drawing.Size(691, 127);
+            this.grp_Opções.Size = new System.Drawing.Size(694, 127);
             this.grp_Opções.TabIndex = 8;
             this.grp_Opções.TabStop = false;
             this.grp_Opções.Text = "Opções";
@@ -154,7 +154,7 @@
             this.btn_Armas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Armas.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Armas.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_Armas.Location = new System.Drawing.Point(5, 21);
+            this.btn_Armas.Location = new System.Drawing.Point(6, 21);
             this.btn_Armas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Armas.Name = "btn_Armas";
             this.btn_Armas.Size = new System.Drawing.Size(191, 100);
@@ -173,7 +173,7 @@
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
             this.mns_Menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mns_Menu.Size = new System.Drawing.Size(803, 28);
+            this.mns_Menu.Size = new System.Drawing.Size(803, 30);
             this.mns_Menu.TabIndex = 9;
             this.mns_Menu.Text = "menuStrip1";
             // 
@@ -183,8 +183,8 @@
             this.tsmi_Cadastro_Armas,
             this.tsmi_Cadastro_Munições});
             this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 24);
-            this.tsmi_Cadastro.Text = "Cadastro";
+            this.tsmi_Cadastro.Size = new System.Drawing.Size(88, 26);
+            this.tsmi_Cadastro.Text = "Cadastros";
             // 
             // tsmi_Cadastro_Armas
             // 
@@ -240,7 +240,7 @@
             // tsmi_Ajuda
             // 
             this.tsmi_Ajuda.Name = "tsmi_Ajuda";
-            this.tsmi_Ajuda.Size = new System.Drawing.Size(62, 24);
+            this.tsmi_Ajuda.Size = new System.Drawing.Size(62, 26);
             this.tsmi_Ajuda.Text = "Ajuda";
             this.tsmi_Ajuda.Click += new System.EventHandler(this.tsmi_Ajuda_Click);
             // 

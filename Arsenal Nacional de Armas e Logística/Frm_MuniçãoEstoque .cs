@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Arsenal_Nacional_de_Armas_e_Logística
 {
-    public partial class Frm_MuniçãoEstoque : Form
+    public partial class Frm_MuniçãoEstoque : Form, Menu
     {
         Util Utilidade = new Util();
         private double energia;
@@ -239,6 +239,12 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void tsmi_Ajuda_Click(object sender, EventArgs e)
         {
             Frm_Ajuda form = new Frm_Ajuda();
+            form.ShowDialog();
+        }
+
+        private void tsmi_Cadastro_Armas_Click(object sender, EventArgs e)
+        {
+            Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
             form.ShowDialog();
         }
     }

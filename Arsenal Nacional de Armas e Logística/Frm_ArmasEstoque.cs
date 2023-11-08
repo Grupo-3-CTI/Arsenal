@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Arsenal_Nacional_de_Armas_e_Logística
 {
-    public partial class Frm_ArmasEstoque : Form
+    public partial class Frm_ArmasEstoque : Form //, Menu (Tirar comentário quando forem implementados os métodos)
     {
         Util Utilidade = new Util();
         NpgsqlConnection conexao;
@@ -181,6 +181,12 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void tsmi_Ajuda_Click(object sender, EventArgs e)
         {
             Frm_Ajuda form = new Frm_Ajuda();
+            form.ShowDialog();
+        }
+
+        private void tsmi_Cadastro_Munições_Click(object sender, EventArgs e)
+        {
+            Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
             form.ShowDialog();
         }
     }

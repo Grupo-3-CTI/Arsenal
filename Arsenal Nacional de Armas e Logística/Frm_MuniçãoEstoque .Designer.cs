@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mns_Menu = new System.Windows.Forms.MenuStrip();
             this.tsmi_Cadastro = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeArmasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeMuniçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_Cadastro_Armas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_Cadastro_Munições = new System.Windows.Forms.ToolStripMenuItem();
             this.ssr_Footer = new System.Windows.Forms.StatusStrip();
             this.slbl_MensagemErro = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslbl_TextoFooter = new System.Windows.Forms.ToolStripStatusLabel();
@@ -80,25 +80,26 @@
             // tsmi_Cadastro
             // 
             this.tsmi_Cadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDeArmasToolStripMenuItem,
-            this.cadastroDeMuniçõesToolStripMenuItem});
+            this.tsmi_Cadastro_Armas,
+            this.tsmi_Cadastro_Munições});
             this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(82, 24);
-            this.tsmi_Cadastro.Text = "Cadastro";
+            this.tsmi_Cadastro.Size = new System.Drawing.Size(88, 24);
+            this.tsmi_Cadastro.Text = "Cadastros";
             // 
-            // cadastroDeArmasToolStripMenuItem
+            // tsmi_Cadastro_Armas
             // 
-            this.cadastroDeArmasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.cadastroDeArmasToolStripMenuItem.Name = "cadastroDeArmasToolStripMenuItem";
-            this.cadastroDeArmasToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.cadastroDeArmasToolStripMenuItem.Text = "Cadastro de Armas";
+            this.tsmi_Cadastro_Armas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tsmi_Cadastro_Armas.Name = "tsmi_Cadastro_Armas";
+            this.tsmi_Cadastro_Armas.Size = new System.Drawing.Size(239, 26);
+            this.tsmi_Cadastro_Armas.Text = "Cadastro de Armas";
+            this.tsmi_Cadastro_Armas.Click += new System.EventHandler(this.tsmi_Cadastro_Armas_Click);
             // 
-            // cadastroDeMuniçõesToolStripMenuItem
+            // tsmi_Cadastro_Munições
             // 
-            this.cadastroDeMuniçõesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.cadastroDeMuniçõesToolStripMenuItem.Name = "cadastroDeMuniçõesToolStripMenuItem";
-            this.cadastroDeMuniçõesToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.cadastroDeMuniçõesToolStripMenuItem.Text = "Cadastro de Munições";
+            this.tsmi_Cadastro_Munições.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tsmi_Cadastro_Munições.Name = "tsmi_Cadastro_Munições";
+            this.tsmi_Cadastro_Munições.Size = new System.Drawing.Size(239, 26);
+            this.tsmi_Cadastro_Munições.Text = "Cadastro de Munições";
             // 
             // ssr_Footer
             // 
@@ -339,14 +340,14 @@
             this.dgv_Munições.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Munições.BackgroundColor = System.Drawing.Color.DarkGreen;
             this.dgv_Munições.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Munições.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Munições.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Munições.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_Munições.Location = new System.Drawing.Point(29, 192);
             this.dgv_Munições.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -421,8 +422,8 @@
 
         private System.Windows.Forms.MenuStrip mns_Menu;
         private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro;
-        private System.Windows.Forms.ToolStripMenuItem cadastroDeArmasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroDeMuniçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro_Armas;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro_Munições;
         private System.Windows.Forms.StatusStrip ssr_Footer;
         private System.Windows.Forms.ToolStripStatusLabel slbl_MensagemErro;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_TextoFooter;
