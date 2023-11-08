@@ -177,5 +177,11 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         {
 
         }
+
+        private void tsmi_Ajuda_Click(object sender, EventArgs e)
+        {
+            Frm_Ajuda form = new Frm_Ajuda();
+            form.ShowDialog();
+        }
     }
 }

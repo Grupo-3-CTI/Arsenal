@@ -34,5 +34,28 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         {
             System.Diagnostics.Process.Start("mailto:" + llb_Email_Fernando.Text);
         }
+
+        private void tsmi_Home_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cadastroDeArmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
+            form.ShowDialog();
+        }
+
+        private void tsmi_Cadastro_Munições_Click(object sender, EventArgs e)
+        {
+            Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
+            form.ShowDialog();
+        }
+
+        private void tsmi_Cadastro_Armas_Click(object sender, EventArgs e)
+        {
+            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
+            form.ShowDialog();
+        }
     }
 }

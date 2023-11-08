@@ -235,5 +235,11 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             query = String.IsNullOrEmpty(txt_Pesquisa.Text) ? "" : $"SELECT * FROM tbl_projetil WHERE lower(nome) LIKE lower('%{txt_Pesquisa.Text}%')";
             Utilidade.fillDataGrid(query, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
         }
+
+        private void tsmi_Ajuda_Click(object sender, EventArgs e)
+        {
+            Frm_Ajuda form = new Frm_Ajuda();
+            form.ShowDialog();
+        }
     }
 }

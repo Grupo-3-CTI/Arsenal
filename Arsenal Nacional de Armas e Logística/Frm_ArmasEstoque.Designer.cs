@@ -56,6 +56,7 @@
             this.btn_Pesquisar = new System.Windows.Forms.Button();
             this.dgv_Armas = new System.Windows.Forms.DataGridView();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
+            this.tsmi_Ajuda = new System.Windows.Forms.ToolStripMenuItem();
             this.mns_Menu.SuspendLayout();
             this.ssr_Footer.SuspendLayout();
             this.grp_TelaEstoque.SuspendLayout();
@@ -68,7 +69,8 @@
             this.mns_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mns_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_Cadastro,
-            this.tsmi_Home});
+            this.tsmi_Home,
+            this.tsmi_Ajuda});
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
             this.mns_Menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -386,6 +388,13 @@
             this.txt_Pesquisa.Enter += new System.EventHandler(this.Txt_Pesquisa_Enter);
             this.txt_Pesquisa.Leave += new System.EventHandler(this.Txt_Pesquisa_Leave);
             // 
+            // tsmi_Ajuda
+            // 
+            this.tsmi_Ajuda.Name = "tsmi_Ajuda";
+            this.tsmi_Ajuda.Size = new System.Drawing.Size(62, 24);
+            this.tsmi_Ajuda.Text = "Ajuda";
+            this.tsmi_Ajuda.Click += new System.EventHandler(this.tsmi_Ajuda_Click);
+            // 
             // Frm_ArmasEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,5 +454,6 @@
         private System.Windows.Forms.Label lbl_CódigoSerial;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Deletar;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_Ajuda;
     }
 }
