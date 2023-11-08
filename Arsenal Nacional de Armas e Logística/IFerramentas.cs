@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace Arsenal_Nacional_de_Armas_e_Logística
 {
-    internal interface Ferramentas
+    internal interface IFerramentas
     {
 
         /* Conexão e utilização de banco de dados */
         NpgsqlConnection ConectarComDB();
-        void fillDataGrid(string query, NpgsqlConnection conexao, DataGrid Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer);
+        void fillDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer);
         void executarComandoDB(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ToolStripStatusLabel Footer);
 
 
@@ -37,7 +37,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         /* Manipulação de textbox */
 
         void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco);
-        void adicionarUnidadeDeMedida(ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool ganhouFoco);
+        string modificarUnidadeDeMedida(ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool ganhouFoco);
         void aceitarSomenteNumeros(object sender, KeyPressEventArgs e);
 
 

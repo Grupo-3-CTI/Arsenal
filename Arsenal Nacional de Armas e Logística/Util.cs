@@ -11,25 +11,23 @@ using System.Windows.Forms;
 
 namespace Arsenal_Nacional_de_Armas_e_Logística
 {
-    internal class Util : Ferramentas
+    internal class Util : IFerramentas
     {
         public void mostrarErro(string erro, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
-            string mensagem = "Erro: "  +erro;
+            string mensagem = "Erro: "  + erro;
             MessageBox.Show(mensagem);
             Footer.Text = mensagem;
         }
         public NpgsqlConnection ConectarComDB()
         {
-            return new NpgsqlConnection(
-            connectionString: "Server=localhost;" + "Port=5432;" +
-            "User ID=postgres;" + "Password=postgres;" + "Database=projeto_2b;" + "Pooling=true;");
+            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=123; Database=projeto_2b; Pooling=true;");
         }
-        public void fillDataGrid(string query, NpgsqlConnection conexao, DataGrid Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
+        public void fillDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
             if (String.IsNullOrEmpty(query))
             {
-                query = $"SELECT * FROM {nomeTabela}";
+                query = $"SELECT * FROM {nomeTabela} ORDER BY id";
             }
             try
             {
@@ -42,10 +40,12 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                         Datagrid.DataSource = dt;
                     }
                 }
+                conexao.Close();
             }
             catch (NpgsqlException ex)
             {
                 mostrarErro(ex.Message, ref Footer);
+                conexao.Close();
             }
         }
         //Para comandos que não retornam uma query. (INSERT, DELETE, UPDATE, etc)
@@ -63,6 +63,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             catch (NpgsqlException ex)
             {
                 mostrarErro(ex.Message, ref Footer);
+                conexao.Close();
             }
         }
         public bool nenhumCampoVazio(params dynamic[] campos)
@@ -142,7 +143,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
         }
         public void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco)
-        {      
+        {
             if (ganhouFoco && campo.Text == placeholderText)
             {
                 campo.Text = "";
@@ -153,18 +154,23 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 campo.Text = placeholderText;
                 campo.ForeColor = Color.DimGray;
             }
-
         }
-        public void adicionarUnidadeDeMedida (ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool  ganhouFoco)
+        public string modificarUnidadeDeMedida (ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool  ganhouFoco)
         {
+            string valor;
             if (ganhouFoco && !String.IsNullOrEmpty(campo.Text))
             {
                 campo.Text = campo.Text.Remove(campo.Text.Length - unidadeDeMedida.Length-1, unidadeDeMedida.Length+1);
+                valor = campo.Text;
+                return valor;
             }
             else if(!String.IsNullOrEmpty(campo.Text) && campo.Text != placeholderText)
             {
+                valor = campo.Text;
                 campo.Text += " " + unidadeDeMedida;
+                return valor;
             }
+            return "0";
         }
         public void aceitarSomenteNumeros(object sender, KeyPressEventArgs e)
         {

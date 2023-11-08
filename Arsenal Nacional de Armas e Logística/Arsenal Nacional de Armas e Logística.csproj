@@ -113,7 +113,7 @@
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
-    <Compile Include="Ferramentas.cs" />
+    <Compile Include="IFerramentas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_MuniçãoEstoque .resx">
