@@ -41,9 +41,6 @@
             this.lbl_Contato = new System.Windows.Forms.Label();
             this.llb_Email_Fernando = new System.Windows.Forms.LinkLabel();
             this.mns_Menu = new System.Windows.Forms.MenuStrip();
-            this.tsmi_Cadastro = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_Cadastro_Armas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_Cadastro_Munições = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_Home = new System.Windows.Forms.ToolStripMenuItem();
             this.ssr_Footer = new System.Windows.Forms.StatusStrip();
             this.slbl_MensagemErro = new System.Windows.Forms.ToolStripStatusLabel();
@@ -196,7 +193,6 @@
             this.mns_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.mns_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mns_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_Cadastro,
             this.tsmi_Home});
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
@@ -204,31 +200,6 @@
             this.mns_Menu.Size = new System.Drawing.Size(770, 28);
             this.mns_Menu.TabIndex = 11;
             this.mns_Menu.Text = "menuStrip1";
-            // 
-            // tsmi_Cadastro
-            // 
-            this.tsmi_Cadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_Cadastro_Armas,
-            this.tsmi_Cadastro_Munições});
-            this.tsmi_Cadastro.Name = "tsmi_Cadastro";
-            this.tsmi_Cadastro.Size = new System.Drawing.Size(88, 24);
-            this.tsmi_Cadastro.Text = "Cadastros";
-            // 
-            // tsmi_Cadastro_Armas
-            // 
-            this.tsmi_Cadastro_Armas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tsmi_Cadastro_Armas.Name = "tsmi_Cadastro_Armas";
-            this.tsmi_Cadastro_Armas.Size = new System.Drawing.Size(239, 26);
-            this.tsmi_Cadastro_Armas.Text = "Cadastro de Armas";
-            this.tsmi_Cadastro_Armas.Click += new System.EventHandler(this.tsmi_Cadastro_Armas_Click);
-            // 
-            // tsmi_Cadastro_Munições
-            // 
-            this.tsmi_Cadastro_Munições.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tsmi_Cadastro_Munições.Name = "tsmi_Cadastro_Munições";
-            this.tsmi_Cadastro_Munições.Size = new System.Drawing.Size(239, 26);
-            this.tsmi_Cadastro_Munições.Text = "Cadastro de Munições";
-            this.tsmi_Cadastro_Munições.Click += new System.EventHandler(this.tsmi_Cadastro_Munições_Click);
             // 
             // tsmi_Home
             // 
@@ -305,9 +276,6 @@
         private System.Windows.Forms.LinkLabel llb_Email_Fernando;
         private System.Windows.Forms.Label lbl_Contato;
         private System.Windows.Forms.MenuStrip mns_Menu;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro_Armas;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_Cadastro_Munições;
         private System.Windows.Forms.ToolStripMenuItem tsmi_Home;
         private System.Windows.Forms.StatusStrip ssr_Footer;
         private System.Windows.Forms.ToolStripStatusLabel slbl_MensagemErro;
