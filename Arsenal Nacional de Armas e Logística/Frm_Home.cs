@@ -40,14 +40,14 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             Titulos.Add(lbl_titulo1);
             Titulos.Add(lbl_titulo2);
             Titulos.Add(lbl_titulo3);
-            Utilidade.usarFonteCustomizada(ref Titulos, capture_it);
+            Utilidade.UsarFonteCustomizada(ref Titulos, capture_it);
 
 
         }
 
         private void FormTestes_Resize(object sender, EventArgs e)
         {
-            Utilidade.usarFonteCustomizada(ref Titulos, capture_it);
+            Utilidade.UsarFonteCustomizada(ref Titulos, capture_it);
         }
 
         private void Btn_Estoque_Click(object sender, EventArgs e)
@@ -78,7 +78,8 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         private void CadastroDeMuniçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
+            form.ShowDialog();
         }
 
         private void tsmi_Ajuda_Click(object sender, EventArgs e)

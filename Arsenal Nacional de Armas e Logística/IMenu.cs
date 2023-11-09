@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Arsenal_Nacional_de_Armas_e_Logística
 {
-    internal interface Menu
+    internal interface IMenu
     {
         void Cadastrar();
         void Editar();

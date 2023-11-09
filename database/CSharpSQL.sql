@@ -15,5 +15,5 @@ CREATE TABLE tbl_arma (
     data_fabricacao timestamp NOT NULL,
     projeteisporcartucho INT NOT NULL,
     projetil INT NOT NULL,
-    FOREIGN KEY (projetil) REFERENCES tbl_projetil(id_projetil)
+    FOREIGN KEY (projetil) REFERENCES tbl_projetil(id)
 );

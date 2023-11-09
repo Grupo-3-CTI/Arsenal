@@ -2,9 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Management.Instrumentation;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +16,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 {
     internal class Util : IFerramentas
     {
-        public void mostrarErro(string erro, ref System.Windows.Forms.ToolStripStatusLabel Footer)
+        public void MostrarErro(string erro, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
             string mensagem = "Erro: "  + erro;
             MessageBox.Show(mensagem);
@@ -23,7 +26,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         {
             return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=postgres; Database=arsenal; Pooling=true;");
         }
-        public void fillDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
+        public void PreencherDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
             if (String.IsNullOrEmpty(query))
             {
@@ -44,12 +47,47 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
             catch (NpgsqlException ex)
             {
-                mostrarErro(ex.Message, ref Footer);
+                MostrarErro(ex.Message, ref Footer);
+                conexao.Close();
+            }
+        }
+
+        public void PreencherComboBox(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ComboBox campo,  string nomeTabela, string[] nomeColunas, ref System.Windows.Forms.ToolStripStatusLabel Footer)
+        {
+            if (String.IsNullOrEmpty(query))
+            {
+                query = $"SELECT * FROM {nomeTabela} ORDER BY id";
+            }
+            try
+            {
+                conexao.Open();
+                using (NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conexao))
+                {
+                    using (DataTable dt = new DataTable())
+                    {
+                        string displayMember = "";
+                        foreach (string nomeColuna in nomeColunas)
+                        {
+                            displayMember += nomeColuna + "  + ' ' + ";
+                        }
+                        displayMember = displayMember.Remove(displayMember.Length - 9, 9);
+                        da.Fill(dt);
+                        dt.Columns.Add("nomeCompleto", typeof(string), displayMember);
+                        campo.DataSource = dt.DefaultView;
+                        campo.DisplayMember = "nomeCompleto";
+                        campo.ValueMember = "id";
+                    }
+                }
+                conexao.Close();
+            }
+            catch (NpgsqlException ex)
+            {
+                MostrarErro(ex.Message, ref Footer);
                 conexao.Close();
             }
         }
         //Para comandos que não retornam uma query. (INSERT, DELETE, UPDATE, etc)
-        public void executarComandoDB(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ToolStripStatusLabel Footer)
+        public void ExecutarComandoDB(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
             try
             {
@@ -62,23 +100,33 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
             catch (NpgsqlException ex)
             {
-                mostrarErro(ex.Message, ref Footer);
+                if (ex.Message.Contains("23503"))
+                {
+                    MostrarErro("Não é possível excluir esta munição pois ela está sendo utilizada em uma arma. Apague todas as armas que o utilizam antes.", ref Footer);
+                }
+                else
+                {
+                    MostrarErro(ex.Message, ref Footer);
+                }
                 conexao.Close();
             }
         }
-        public bool nenhumCampoVazio(params dynamic[] campos)
+        public bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels)
         {
+            int i = 0;
             foreach (dynamic campo in campos)
             {
+                ++i;
                 if (String.IsNullOrEmpty(campo.Text))
                 {
+                    labels[i].Font =  new Font(labels[i].Font,FontStyle.Bold);
                     return false;
                 }
             }
             return true;
         }
         //Sobrecarga do método para listas
-        public bool nenhumCampoVazio(List<dynamic> campos)
+        public bool NenhumCampoVazio(List<dynamic> campos)
         {
             foreach (dynamic campo in campos)
             {
@@ -90,41 +138,41 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             return true;
         }
 
-        public bool respondeuSimParaPopup(string titulo, string texto)
+        public bool RespondeuSimParaPopup(string titulo, string texto)
         {
             DialogResult dialogResult = MessageBox.Show(texto, titulo, MessageBoxButtons.YesNo);
             return dialogResult == DialogResult.Yes;
         }
         //Sobrecarga do método para listas
-        public void mudarTextoParaNegrito(ref System.Windows.Forms.Label campo)
+        public void MudarTextoParaNegrito(ref System.Windows.Forms.Label campo)
         {
             campo.Font = new Font(campo.Font, FontStyle.Bold);
         }
 
 
-        public void mudarTextoParaNegrito(ref List<System.Windows.Forms.Label> campos)
+        public void MudarTextoParaNegrito(ref List<System.Windows.Forms.Label> campos)
         {
             foreach (System.Windows.Forms.Label campo in campos)
                 campo.Font = new Font(campo.Font, FontStyle.Bold);
         }
-        public void mudarFonteAoNormal(ref System.Windows.Forms.Label campo)
+        public void MudarFonteAoNormal(ref System.Windows.Forms.Label campo)
         {
             campo.Font = new Font(campo.Font, FontStyle.Regular);
         }
         //Sobrecarga do método para listas
-        public void mudarFonteAoNormal(ref List<System.Windows.Forms.Label> campos)
+        public void MudarFonteAoNormal(ref List<System.Windows.Forms.Label> campos)
         {
             foreach (System.Windows.Forms.Label campo in campos)
                 campo.Font = new Font(campo.Font, FontStyle.Regular);
         }
 
-        public void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int familia, int tamanho)
+        public void UsarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int familia, int tamanho)
         {
                 
             campo.Font = new Font(pfc.Families[familia], tamanho, FontStyle.Regular);
         }
         //Sobrecarga do método para listas
-        public void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int familia, int tamanho)
+        public void UsarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int familia, int tamanho)
         {
             foreach (var campo in campos)
             {
@@ -132,17 +180,17 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
            
             }
         }
-        public void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic fonte) { 
+        public void UsarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic fonte) { 
             campo.Font = fonte;
         }
-        public void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic fonte)
+        public void UsarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic fonte)
         {
             foreach (var campo in campos)
             {
                 campo.Font = fonte;
             }
         }
-        public void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco)
+        public void ModificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco)
         {
             if (ganhouFoco && campo.Text == placeholderText)
             {
@@ -155,7 +203,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 campo.ForeColor = Color.DimGray;
             }
         }
-        public string modificarUnidadeDeMedida (ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool  ganhouFoco)
+        public string ModificarUnidadeDeMedida (ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool  ganhouFoco)
         {
             string valor;
             if (ganhouFoco && !String.IsNullOrEmpty(campo.Text))
@@ -172,7 +220,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
             return "0";
         }
-        public void aceitarSomenteNumeros(object sender, KeyPressEventArgs e)
+        public void AceitarSomenteNumeros(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar) || e.KeyChar == ' ')
             {

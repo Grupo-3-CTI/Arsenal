@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.15\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -118,7 +121,7 @@
     <Compile Include="Frm_Home.Designer.cs">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs" />
+    <Compile Include="IMenu.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="IFerramentas.cs" />
     <Compile Include="Program.cs" />

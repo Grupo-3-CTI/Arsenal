@@ -13,36 +13,39 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         /* Conexão e utilização de banco de dados */
         NpgsqlConnection ConectarComDB();
-        void fillDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer);
-        void executarComandoDB(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ToolStripStatusLabel Footer);
+        void PreencherDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer);
+        void ExecutarComandoDB(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ToolStripStatusLabel Footer);
+        void PreencherComboBox(string query, NpgsqlConnection conexao, ref System.Windows.Forms.ComboBox campo, string nomeTabela, string[] nomeColuna, ref System.Windows.Forms.ToolStripStatusLabel Footer);
 
 
         /* Verificação de input de usuário */
-        bool nenhumCampoVazio(params dynamic[] campos);
-        bool nenhumCampoVazio(List<dynamic> campos);
-        bool respondeuSimParaPopup(string titulo, string texto);
+        bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels);
+        bool NenhumCampoVazio(List<dynamic> campos);
+        bool RespondeuSimParaPopup(string titulo, string texto);
 
 
 
         /* Manipulação de fonte */
-        void mudarTextoParaNegrito(ref System.Windows.Forms.Label campo);
-        void mudarTextoParaNegrito(ref List<System.Windows.Forms.Label> campos);
-        void mudarFonteAoNormal(ref System.Windows.Forms.Label campo);
-        void mudarFonteAoNormal(ref List<System.Windows.Forms.Label> campos);
-        void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int familia, int tamanho);
-        void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int familia, int tamanho);
-        void usarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic fonte);
-        void usarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic fonte);
+        void MudarTextoParaNegrito(ref System.Windows.Forms.Label campo);
+        void MudarTextoParaNegrito(ref List<System.Windows.Forms.Label> campos);
+        void MudarFonteAoNormal(ref System.Windows.Forms.Label campo);
+        void MudarFonteAoNormal(ref List<System.Windows.Forms.Label> campos);
+        void UsarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic pfc, int familia, int tamanho);
+        void UsarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic pfc, int familia, int tamanho);
+        void UsarFonteCustomizada(ref System.Windows.Forms.Label campo, dynamic fonte);
+        void UsarFonteCustomizada(ref List<System.Windows.Forms.Label> campos, dynamic fonte);
 
         /* Manipulação de textbox */
 
-        void modificarTextoPlaceholder(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco);
-        string modificarUnidadeDeMedida(ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool ganhouFoco);
-        void aceitarSomenteNumeros(object sender, KeyPressEventArgs e);
+        void ModificarTextoPlaceholder(ref TextBox campo, string placeholderText, bool ganhouFoco);
+        string ModificarUnidadeDeMedida(ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool ganhouFoco);
+        void AceitarSomenteNumeros(object sender, KeyPressEventArgs e);
+
+        
 
 
         /* Exibição de erros */
-        void mostrarErro(string erro, ref System.Windows.Forms.ToolStripStatusLabel Footer);
+        void MostrarErro(string erro, ref System.Windows.Forms.ToolStripStatusLabel Footer);
 
     }
 }
