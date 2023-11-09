@@ -17,7 +17,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         Util Utilidade = new Util();
         private double energia;
         private int velocidade;
-        private double peso;
+        private int peso;
         private string textoEnergia;
         private int ID;
         private string queryBusca = "";
@@ -53,6 +53,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void Txt_Peso_Enter(object sender, EventArgs e)
         {
             Utilidade.ModificarTextoPlaceholder(ref txt_Peso, "Peso em gramas", true);
+
             Utilidade.ModificarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", true);
         }
 
@@ -60,7 +61,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void Txt_Peso_Leave(object sender, EventArgs e)
         {
             Utilidade.ModificarTextoPlaceholder(ref txt_Peso, "Peso em gramas", false);
-            if (double.TryParse(Utilidade.ModificarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", false), out peso))
+            if (int.TryParse(Utilidade.ModificarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", false), out peso))
             {
                 TentarCalcularEnergia();
             } else
@@ -99,7 +100,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         {
 
             if (velocidade > 0 && peso > 0) {
-                energia = Math.Round(((peso/1000) * Math.Pow(velocidade, 2)) / 2, 2);
+                energia = Math.Round((((double)peso/1000) * Math.Pow(velocidade, 2)) / 2, 2);
                 textoEnergia = energia.ToString();
                 txt_Energia.Text = textoEnergia;
                 Utilidade.ModificarUnidadeDeMedida(ref txt_Energia, "(Cálculo automático)", "J", false);
@@ -130,15 +131,19 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
                 var calibre = dgv_Munições.SelectedRows[0].Cells[1].Value;
                 var nome = dgv_Munições.SelectedRows[0].Cells[2].Value;
-                var velocidade = dgv_Munições.SelectedRows[0].Cells[3].Value;
-                var peso = dgv_Munições.SelectedRows[0].Cells[4].Value;
-                var energia = dgv_Munições.SelectedRows[0].Cells[5].Value;
+                var velocidadeDgv = dgv_Munições.SelectedRows[0].Cells[3].Value;
+                var pesoDgv = dgv_Munições.SelectedRows[0].Cells[4].Value;
+                var energiaDgv = dgv_Munições.SelectedRows[0].Cells[5].Value;
+
+                peso = int.Parse(pesoDgv.ToString());
+                velocidade = int.Parse(velocidadeDgv.ToString());
+                energia = double.Parse(energiaDgv.ToString());
 
                 txt_Nome.Text = nome.ToString();
-                txt_Peso.Text = peso.ToString();
-                txt_Velocidade.Text = velocidade.ToString();
+                txt_Peso.Text = pesoDgv.ToString();
+                txt_Velocidade.Text = velocidadeDgv.ToString();
                 txt_Calibre.Text = calibre.ToString();
-                txt_Energia.Text = energia.ToString();
+                txt_Energia.Text = energiaDgv.ToString();
 
                 Utilidade.ModificarUnidadeDeMedida(ref txt_Peso, "Peso em gramas", "g", false);
                 Utilidade.ModificarUnidadeDeMedida(ref txt_Velocidade, "Velocidade em m/s", "m/s", false);
@@ -173,12 +178,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             form.ShowDialog();
         }
 
-        private void tsmi_Cadastro_Armas_Click(object sender, EventArgs e)
-        {
-            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
-            form.ShowDialog();
-        }
-
         private void Txt_Pesquisa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -190,16 +189,28 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         public void Cadastrar()
         {
-            dynamic[] campos = { txt_Nome, txt_Peso, txt_Velocidade, txt_Calibre, txt_Energia };
-            Label[] labels = { lbl_Nome, lbl_Peso, lbl_Velocidade, lbl_Calibre, lbl_Energia };
-            if (Utilidade.NenhumCampoVazio(campos, ref labels))
+            dynamic[] campos = { txt_Nome, txt_Calibre, txt_Peso, txt_Velocidade };
+            Label[] labels = { lbl_Nome, lbl_Calibre, lbl_Peso, lbl_Velocidade };
+            string[] textos = { txt_Nome.Text, txt_Calibre.Text, Utilidade.ReceberTextoPlaceholderModificado(ref txt_Peso, "Peso em gramas", true), 
+                Utilidade.ReceberTextoPlaceholderModificado(ref txt_Velocidade, "Velocidade em m/s", true) };
+            if (Utilidade.NenhumCampoVazio(campos, ref labels, textos))
             {
-                if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa munição?"))
+                int[] valores = { peso, velocidade };
+                campos = new dynamic[] { txt_Peso, txt_Velocidade };
+                labels = new Label[] { lbl_Peso, lbl_Velocidade };
+                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, 0, valores))
                 {
-                    string query = $"INSERT INTO tbl_projetil (nome, peso, velocidade, calibre, energia) VALUES ('{txt_Nome.Text}', '{peso}', '{velocidade}', '{txt_Calibre.Text}', '{energia.ToString(CultureInfo.InvariantCulture)}')";
-                    Utilidade.ExecutarComandoDB(query, conexao, ref tslbl_TextoFooter);
-                    Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
-                    Limpar();
+                    if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa munição?"))
+                    {
+                        string query = $"INSERT INTO tbl_projetil (nome, peso, velocidade, calibre, energia) VALUES ('{txt_Nome.Text}', '{peso}', '{velocidade}', '{txt_Calibre.Text}', '{energia.ToString(CultureInfo.InvariantCulture)}')";
+                        Utilidade.ExecutarComandoDB(query, conexao, ref tslbl_TextoFooter);
+                        Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
+                        Limpar();
+                    }
+                }
+                else
+                {
+                    Utilidade.MostrarErro("Campo não pode ser igual a 0!", ref tslbl_TextoFooter);
                 }
             }
             else
@@ -219,16 +230,29 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public void Editar()
         {
-            dynamic[] campos = { txt_Nome, txt_Peso, txt_Velocidade, txt_Calibre, txt_Energia };
-            Label[] labels = { lbl_Nome, lbl_Peso, lbl_Velocidade, lbl_Calibre, lbl_Energia };
-            if (Utilidade.NenhumCampoVazio(campos, ref labels))
+            dynamic[] campos = { txt_Nome, txt_Calibre, txt_Peso, txt_Velocidade };
+            Label[] labels = { lbl_Nome, lbl_Calibre, lbl_Peso, lbl_Velocidade };
+            string[] textos = { txt_Nome.Text, txt_Calibre.Text, Utilidade.ReceberTextoPlaceholderModificado(ref txt_Peso, "Peso em gramas", true),
+                           Utilidade.ReceberTextoPlaceholderModificado(ref txt_Velocidade, "Velocidade em m/s", true) };
+            if (Utilidade.NenhumCampoVazio(campos, ref labels, textos))
             {
-                if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa munição?"))
+                int[] valores = { peso, velocidade };
+                campos = new dynamic[] { txt_Peso, txt_Velocidade };
+                labels = new Label[] { lbl_Peso, lbl_Velocidade };
+                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, 0, valores))
                 {
-                    string query = $"UPDATE tbl_projetil SET nome = '{txt_Nome.Text}', peso = '{peso}', velocidade = '{velocidade}', calibre = '{txt_Calibre.Text}', energia = '{energia.ToString(CultureInfo.InvariantCulture)}' WHERE id = {ID}";
-                    Utilidade.ExecutarComandoDB(query, conexao, ref tslbl_TextoFooter);
-                    Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
+                    if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa munição?"))
+                    {
+                        string query = $"UPDATE tbl_projetil SET nome = '{txt_Nome.Text}', peso = '{peso}', velocidade = '{velocidade}', calibre = '{txt_Calibre.Text}', energia = '{energia.ToString(CultureInfo.InvariantCulture)}' WHERE id = {ID}";
+                        Utilidade.ExecutarComandoDB(query, conexao, ref tslbl_TextoFooter);
+                        Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
+                    }
+                } 
+                else
+                {
+                    Utilidade.MostrarErro("Campo não pode ser igual a 0!", ref tslbl_TextoFooter);
                 }
+                
             }
             else
             {
