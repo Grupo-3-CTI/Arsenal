@@ -31,11 +31,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             Utilidade.PreencherDataGrid("", conexao, dgv_Munições, "tbl_projetil", ref tslbl_TextoFooter);
         }
 
-        private void Txt_Pesquisa_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Txt_Pesquisa_Enter(object sender, EventArgs e)
         {
             Utilidade.ModificarTextoPlaceholder(ref txt_Pesquisa, "Pesquisar...", true);
@@ -66,7 +61,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 TentarCalcularEnergia();
             } else
             {
-                Utilidade.MostrarErro("Peso inválido!", ref tslbl_TextoFooter);
+                Utilidade.MostrarErro("Peso inválido! Número possivelmente muito grande.", ref tslbl_TextoFooter);
             }
         }
 
@@ -84,7 +79,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
             }
             else
             {
-                Utilidade.MostrarErro("Velocidade inválida!", ref tslbl_TextoFooter);
+                Utilidade.MostrarErro("Velocidade inválida! Número possivelmente muito grande.", ref tslbl_TextoFooter);
             }
         }
         private void Txt_Velocidade_KeyPress(object sender, KeyPressEventArgs e)
@@ -186,7 +181,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 e.Handled = true;
             }
         }
-
         public void Cadastrar()
         {
             dynamic[] campos = { txt_Nome, txt_Calibre, txt_Peso, txt_Velocidade };
@@ -198,7 +192,10 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 int[] valores = { peso, velocidade };
                 campos = new dynamic[] { txt_Peso, txt_Velocidade };
                 labels = new Label[] { lbl_Peso, lbl_Velocidade };
-                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, 0, valores))
+                int proibido = 0;
+                int max = 100000;
+                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, proibido, valores) &&
+                    Utilidade.NenhumCampoNumericoMaiorQue(campos, ref labels, max, valores))
                 {
                     if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa munição?"))
                     {
@@ -210,7 +207,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 }
                 else
                 {
-                    Utilidade.MostrarErro("Campo não pode ser igual a 0!", ref tslbl_TextoFooter);
+                    Utilidade.MostrarErro("Campo não pode ser igual a " + proibido + " ou maior que " + max + "!", ref tslbl_TextoFooter);
                 }
             }
             else
@@ -239,7 +236,10 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 int[] valores = { peso, velocidade };
                 campos = new dynamic[] { txt_Peso, txt_Velocidade };
                 labels = new Label[] { lbl_Peso, lbl_Velocidade };
-                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, 0, valores))
+                int proibido = 0;
+                int max = 100000;
+                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, proibido, valores) &&
+                    Utilidade.NenhumCampoNumericoMaiorQue(campos, ref labels, max, valores))
                 {
                     if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa munição?"))
                     {
@@ -250,7 +250,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 } 
                 else
                 {
-                    Utilidade.MostrarErro("Campo não pode ser igual a 0!", ref tslbl_TextoFooter);
+                    Utilidade.MostrarErro("Campo não pode ser igual a " + proibido + " ou maior que " + max + "!", ref tslbl_TextoFooter);
                 }
                 
             }

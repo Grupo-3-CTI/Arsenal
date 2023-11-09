@@ -19,8 +19,14 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
 
         /* Verificação de input de usuário */
-        bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels);
-        bool NenhumCampoVazio(List<dynamic> campos);
+        bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels, string[] textos);
+        bool NenhumCampoVazio(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, List<string> textos);
+        bool NenhumCampoNumericoMaiorQue(dynamic[] campos, ref System.Windows.Forms.Label[] labels, int valor, int[] valores);
+        bool NenhumCampoNumericoMaiorQue(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, int valor, List<int> valores);
+        bool NenhumCampoNumericoMenorQue(dynamic[] campos, ref System.Windows.Forms.Label[] labels, int valor, int[] valores);
+        bool NenhumCampoNumericoMenorQue(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, int valor, List<int> valores);
+        bool NenhumCampoNumericoIgualA(dynamic[] campos, ref System.Windows.Forms.Label[] labels, int valor, int[] valores);
+        bool NenhumCampoNumericoIgualA(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, int valor, List<int> valores);
         bool RespondeuSimParaPopup(string titulo, string texto);
 
 
@@ -38,6 +44,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         /* Manipulação de textbox */
 
         void ModificarTextoPlaceholder(ref TextBox campo, string placeholderText, bool ganhouFoco);
+        string ReceberTextoPlaceholderModificado(ref TextBox campo, string placeholderText, bool ganhouFoco);
         string ModificarUnidadeDeMedida(ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool ganhouFoco);
         void AceitarSomenteNumeros(object sender, KeyPressEventArgs e);
 

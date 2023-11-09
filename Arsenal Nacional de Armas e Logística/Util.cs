@@ -24,7 +24,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public NpgsqlConnection ConectarComDB()
         {
-            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=postgres; Database=arsenal; Pooling=true;");
+            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=123; Database=projeto_2b; Pooling=true;");
         }
         public void PreencherDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
@@ -111,29 +111,177 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 conexao.Close();
             }
         }
-        public bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels)
+        public bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels, string[] textos)
         {
             int i = 0;
             foreach (dynamic campo in campos)
             {
-                ++i;
-                if (String.IsNullOrEmpty(campo.Text))
+                if (string.IsNullOrEmpty(textos[i]))
                 {
-                    labels[i].Font =  new Font(labels[i].Font,FontStyle.Bold);
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
                     return false;
+                } else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
                 }
+                ++i;
             }
             return true;
         }
         //Sobrecarga do método para listas
-        public bool NenhumCampoVazio(List<dynamic> campos)
+        public bool NenhumCampoVazio(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, List<string> textos)
         {
+            int i = 0;
             foreach (dynamic campo in campos)
             {
-                if (String.IsNullOrEmpty(campo.Text))
+                if (string.IsNullOrEmpty(textos[i]))
                 {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
                     return false;
                 }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
+            }
+            return true;
+        }
+
+        public bool NenhumCampoNumericoMaiorQue(dynamic[] campos, ref System.Windows.Forms.Label[] labels, int valor, int[] valores)
+        {
+            int i = 0;
+            foreach (dynamic campo in campos)
+            {
+                if (valores[i] > valor)
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
+                    return false;
+                }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
+            }
+            return true;
+        }
+        //Sobrecarga do método para listas
+        public bool NenhumCampoNumericoMaiorQue(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, int valor, List<int> valores)
+        {
+            int i = 0;
+            foreach (dynamic campo in campos)
+            {
+                if (valores[i] > valor)
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
+                    return false;
+                }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
+            }
+            return true;
+        }
+
+        public bool NenhumCampoNumericoMenorQue(dynamic[] campos, ref System.Windows.Forms.Label[] labels, int valor, int[] valores)
+        {
+            int i = 0;
+            foreach (dynamic campo in campos)
+            {
+                if (valores[i] < valor)
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
+                    return false;
+                }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
+            }
+            return true;
+        }
+        //Sobrecarga do método para listas
+        public bool NenhumCampoNumericoMenorQue(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, int valor, List<int> valores)
+        {
+            int i = 0;
+            foreach (dynamic campo in campos)
+            {
+                if (valores[i] < valor)
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
+                    return false;
+                }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
+            }
+            return true;
+        }
+
+        public bool NenhumCampoNumericoIgualA(dynamic[] campos, ref System.Windows.Forms.Label[] labels, int valor, int[] valores)
+        {
+            int i = 0;
+            foreach (dynamic campo in campos)
+            {
+                if (valores[i] == valor)
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
+                    return false;
+                }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
+            }
+            return true;
+        }
+        //Sobrecarga do método para listas
+        public bool NenhumCampoNumericoIgualA(List<dynamic> campos, ref List<System.Windows.Forms.Label> labels, int valor, List<int> valores)
+        {
+            int i = 0;
+            foreach (dynamic campo in campos)
+            {
+                if (valores[i] == valor)
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Bold);
+                    labels[i].ForeColor = Color.Red;
+                    campo.Focus();
+                    return false;
+                }
+                else
+                {
+                    labels[i].Font = new Font(labels[i].Font, FontStyle.Regular);
+                    labels[i].ForeColor = Color.White;
+                }
+                ++i;
             }
             return true;
         }
@@ -202,6 +350,18 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 campo.Text = placeholderText;
                 campo.ForeColor = Color.DimGray;
             }
+        }
+        public string ReceberTextoPlaceholderModificado(ref System.Windows.Forms.TextBox campo, string placeholderText, bool ganhouFoco)
+        {
+            if (ganhouFoco && campo.Text == placeholderText)
+            {
+                return "";
+            }
+            else if (String.IsNullOrEmpty(campo.Text))
+            {
+                return placeholderText;
+            }
+            return campo.Text;
         }
         public string ModificarUnidadeDeMedida (ref System.Windows.Forms.TextBox campo, string placeholderText, string unidadeDeMedida, bool  ganhouFoco)
         {

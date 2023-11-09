@@ -55,8 +55,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void Txt_Cartucho_Enter(object sender, EventArgs e)
         {
             Utilidade.ModificarTextoPlaceholder(ref txt_Cartucho, "Balas por cartucho aqui...", true);
-            if (Int32.TryParse(txt_Cartucho.Text, out int qtd))
-                qtd_car = qtd;
             Utilidade.ModificarUnidadeDeMedida(ref txt_Cartucho, "Balas por cartucho aqui...",
                 (qtd_car > 1 ? "balas" : "bala") + " por cartucho", true);
         }
@@ -75,8 +73,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void Txt_Cadencia_Enter(object sender, EventArgs e)
         {
             Utilidade.ModificarTextoPlaceholder(ref txt_Cadencia, "Tiros por segundo aqui...", true);
-            if (Int32.TryParse(txt_Cadencia.Text, out int qtd))
-                qtd_cad = qtd;
             Utilidade.ModificarUnidadeDeMedida(ref txt_Cadencia, "Tiros por segundo aqui...",
                  (qtd_cad > 1 ? "tiros" : "tiro") + " por segundo", true);
         }
@@ -196,19 +192,37 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         public void Cadastrar()
         {
-            dynamic[] campos = { txt_Nome, txt_Cadencia, txt_Cartucho, txt_codigoSerial };
-            Label[] labels = { lbl_Nome, lbl_Cadência, lbl_Cartucho, lbl_CódigoSerial };
-            if (Utilidade.NenhumCampoVazio(campos, ref labels) && cmb_Munição.SelectedIndex != -1)
+            dynamic[] campos = { txt_Nome, txt_Cartucho, txt_Cadencia, txt_codigoSerial };
+            Label[] labels = { lbl_Nome, lbl_Cartucho, lbl_Cadência, lbl_CódigoSerial };
+            string[] textos = {txt_Nome.Text, Utilidade.ReceberTextoPlaceholderModificado(ref txt_Cartucho, "Balas por cartucho aqui...", true),
+                    Utilidade.ReceberTextoPlaceholderModificado(ref txt_Cadencia, "Tiros por segundo aqui...", true), txt_codigoSerial.Text};
+            bool nenhumCampoVazio = Utilidade.NenhumCampoVazio(campos, ref labels, textos);
+            if (nenhumCampoVazio && cmb_Munição.SelectedIndex != -1)
             {
-                if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa arma?"))
+                int[] valores = { qtd_car, qtd_cad };
+                labels = new Label[] { lbl_Cartucho, lbl_Cadência};
+                campos = new dynamic[] { txt_Cartucho, txt_Cadencia };
+                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, 0, valores))
                 {
-                    Utilidade.ExecutarComandoDB($"INSERT INTO tbl_arma (nome, cadencia, projeteisporcartucho, numero_serie, data_fabricacao, projetil) VALUES ('{txt_Nome.Text}', {qtd_cad}, {qtd_car}, '{txt_codigoSerial.Text}', '{dtp_DataFabricacao.Value}', '{cmb_Munição.SelectedValue}')", conexao, ref tslbl_TextoFooter);
-                    Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Armas, "tbl_arma", ref tslbl_TextoFooter);
-                    Limpar();
+                    if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa arma?"))
+                    {
+                        Utilidade.ExecutarComandoDB($"INSERT INTO tbl_arma (nome, cadencia, projeteisporcartucho, numero_serie, data_fabricacao, projetil) VALUES ('{txt_Nome.Text}', {qtd_cad}, {qtd_car}, '{txt_codigoSerial.Text}', '{dtp_DataFabricacao.Value}', '{cmb_Munição.SelectedValue}')", conexao, ref tslbl_TextoFooter);
+                        Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Armas, "tbl_arma", ref tslbl_TextoFooter);
+                        Limpar();
+                    }
+                }
+                else
+                {
+                    Utilidade.MostrarErro("Campo não pode ser igual a 0!", ref tslbl_TextoFooter);
                 }
             }
             else
             {
+                if (cmb_Munição.SelectedIndex == -1 && nenhumCampoVazio)
+                {
+                    lbl_TipoMunição.Font = new Font(lbl_TipoMunição.Font, FontStyle.Bold);
+                    lbl_TipoMunição.ForeColor = Color.Red;
+                }
                 Utilidade.MostrarErro("Preencha todos os campos!", ref tslbl_TextoFooter);
             }
         }
@@ -242,18 +256,32 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public void Editar()
         {
-            dynamic[] campos = { txt_Nome, txt_Cadencia, txt_Cartucho, txt_codigoSerial };
-            Label[] labels = { lbl_Nome, lbl_Cadência, lbl_Cartucho, lbl_CódigoSerial };
-            if (Utilidade.NenhumCampoVazio(campos, ref labels) && cmb_Munição.SelectedIndex != -1)
+            dynamic[] campos = { txt_Nome, txt_Cartucho, txt_Cadencia, txt_codigoSerial };
+            Label[] labels = { lbl_Nome, lbl_Cartucho, lbl_Cadência, lbl_CódigoSerial };
+            string[] textos = { txt_Nome.Text, Utilidade.ReceberTextoPlaceholderModificado(ref txt_Cartucho, "Balas por cartucho aqui...", true), 
+                Utilidade.ReceberTextoPlaceholderModificado(ref txt_Cadencia, "Tiros por segundo aqui...", true), txt_codigoSerial.Text};
+            bool nenhumCampoVazio = Utilidade.NenhumCampoVazio(campos, ref labels, textos);
+            if (nenhumCampoVazio && cmb_Munição.SelectedIndex != -1)
             {
-                if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa arma?"))
+                int[] valores = { qtd_car, qtd_cad };
+                labels = new Label[] {lbl_Cartucho, lbl_Cadência };
+                campos = new dynamic[] {txt_Cartucho, txt_Cadencia };
+                if (Utilidade.NenhumCampoNumericoIgualA(campos, ref labels, 0, valores))
                 {
-                    Utilidade.ExecutarComandoDB($"UPDATE tbl_arma SET nome = '{txt_Nome.Text}', cadencia = {qtd_cad}, projeteisporcartucho = {qtd_car}, numero_serie = '{txt_codigoSerial.Text}', data_fabricacao = '{dtp_DataFabricacao.Value}', projetil = '{cmb_Munição.SelectedValue}' WHERE id = {ID}", conexao, ref tslbl_TextoFooter);
-                    Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Armas, "tbl_arma", ref tslbl_TextoFooter);
+                    if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa arma?"))
+                    {
+                        Utilidade.ExecutarComandoDB($"UPDATE tbl_arma SET nome = '{txt_Nome.Text}', cadencia = {qtd_cad}, projeteisporcartucho = {qtd_car}, numero_serie = '{txt_codigoSerial.Text}', data_fabricacao = '{dtp_DataFabricacao.Value}', projetil = '{cmb_Munição.SelectedValue}' WHERE id = {ID}", conexao, ref tslbl_TextoFooter);
+                        Utilidade.PreencherDataGrid(queryBusca, Utilidade.ConectarComDB(), dgv_Armas, "tbl_arma", ref tslbl_TextoFooter);
+                    }
                 }
             }
             else
             {
+                if (cmb_Munição.SelectedIndex == -1 && nenhumCampoVazio)
+                {
+                    lbl_TipoMunição.Font = new Font(lbl_TipoMunição.Font, FontStyle.Bold);
+                    lbl_TipoMunição.ForeColor = Color.Red;
+                }
                 Utilidade.MostrarErro("Preencha todos os campos!", ref tslbl_TextoFooter);
             }
         }

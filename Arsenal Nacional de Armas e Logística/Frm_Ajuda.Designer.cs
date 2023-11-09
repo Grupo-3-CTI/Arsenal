@@ -145,7 +145,6 @@
             this.lbl_Fernando.Size = new System.Drawing.Size(215, 17);
             this.lbl_Fernando.TabIndex = 5;
             this.lbl_Fernando.Text = "13 - Fernando Ellerbrock Theodoro";
-            this.lbl_Fernando.Click += new System.EventHandler(this.lbl_Fernando_Click);
             // 
             // lbl_Emily
             // 

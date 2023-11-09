@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mns_Menu = new System.Windows.Forms.MenuStrip();
+            this.tsmi_Home = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_Ajuda = new System.Windows.Forms.ToolStripMenuItem();
             this.ssr_Footer = new System.Windows.Forms.StatusStrip();
             this.slbl_MensagemErro = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslbl_TextoFooter = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,7 +64,7 @@
             this.mns_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.mns_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mns_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.tsmi_Home,
             this.tsmi_Ajuda});
             this.mns_Menu.Location = new System.Drawing.Point(0, 0);
             this.mns_Menu.Name = "mns_Menu";
@@ -70,6 +72,20 @@
             this.mns_Menu.Size = new System.Drawing.Size(804, 24);
             this.mns_Menu.TabIndex = 10;
             this.mns_Menu.Text = "menuStrip1";
+            // 
+            // tsmi_Home
+            // 
+            this.tsmi_Home.Name = "tsmi_Home";
+            this.tsmi_Home.Size = new System.Drawing.Size(49, 20);
+            this.tsmi_Home.Text = "Voltar";
+            this.tsmi_Home.Click += new System.EventHandler(this.Tsmi_Home_Click);
+            // 
+            // tsmi_Ajuda
+            // 
+            this.tsmi_Ajuda.Name = "tsmi_Ajuda";
+            this.tsmi_Ajuda.Size = new System.Drawing.Size(50, 20);
+            this.tsmi_Ajuda.Text = "Ajuda";
+            this.tsmi_Ajuda.Click += new System.EventHandler(this.tsmi_Ajuda_Click);
             // 
             // ssr_Footer
             // 
@@ -315,14 +331,14 @@
             this.dgv_Munições.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Munições.BackgroundColor = System.Drawing.Color.DarkGreen;
             this.dgv_Munições.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Munições.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Munições.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Munições.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_Munições.Location = new System.Drawing.Point(22, 156);
             this.dgv_Munições.Margin = new System.Windows.Forms.Padding(2);
@@ -347,7 +363,6 @@
             this.txt_Pesquisa.Size = new System.Drawing.Size(672, 22);
             this.txt_Pesquisa.TabIndex = 0;
             this.txt_Pesquisa.Text = "Pesquisar...";
-            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.Txt_Pesquisa_TextChanged_1);
             this.txt_Pesquisa.Enter += new System.EventHandler(this.Txt_Pesquisa_Enter);
             this.txt_Pesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Pesquisa_KeyPress);
             this.txt_Pesquisa.Leave += new System.EventHandler(this.Txt_Pesquisa_Leave);

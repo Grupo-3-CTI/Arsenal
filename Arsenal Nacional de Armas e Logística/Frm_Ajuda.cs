@@ -19,17 +19,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         {
             InitializeComponent();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("mailto: fernando.theodoro@unesp.br");
-        }
-
-        private void lbl_Fernando_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void llb_Email_Fernando_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("mailto:" + llb_Email_Fernando.Text);
@@ -38,24 +27,6 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         private void tsmi_Home_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cadastroDeArmasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
-            form.ShowDialog();
-        }
-
-        private void tsmi_Cadastro_Munições_Click(object sender, EventArgs e)
-        {
-            Frm_MuniçãoEstoque form = new Frm_MuniçãoEstoque();
-            form.ShowDialog();
-        }
-
-        private void tsmi_Cadastro_Armas_Click(object sender, EventArgs e)
-        {
-            Frm_ArmasEstoque form = new Frm_ArmasEstoque();
-            form.ShowDialog();
         }
     }
 }
