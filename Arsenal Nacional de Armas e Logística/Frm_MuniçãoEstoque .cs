@@ -190,7 +190,9 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         public void Cadastrar()
         {
-            if (Utilidade.NenhumCampoVazio(txt_Nome, txt_Peso, txt_Velocidade, txt_Calibre, txt_Energia))
+            dynamic[] campos = { txt_Nome, txt_Peso, txt_Velocidade, txt_Calibre, txt_Energia };
+            Label[] labels = { lbl_Nome, lbl_Peso, lbl_Velocidade, lbl_Calibre, lbl_Energia };
+            if (Utilidade.NenhumCampoVazio(campos, ref labels))
             {
                 if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa munição?"))
                 {
@@ -217,7 +219,9 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public void Editar()
         {
-            if (Utilidade.NenhumCampoVazio(txt_Nome, txt_Peso, txt_Velocidade, txt_Calibre, txt_Energia))
+            dynamic[] campos = { txt_Nome, txt_Peso, txt_Velocidade, txt_Calibre, txt_Energia };
+            Label[] labels = { lbl_Nome, lbl_Peso, lbl_Velocidade, lbl_Calibre, lbl_Energia };
+            if (Utilidade.NenhumCampoVazio(campos, ref labels))
             {
                 if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa munição?"))
                 {

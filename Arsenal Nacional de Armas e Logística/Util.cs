@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Management.Instrumentation;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public NpgsqlConnection ConectarComDB()
         {
-            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=123; Database=projeto_2b; Pooling=true;");
+            return new NpgsqlConnection(connectionString: "Server=localhost; Port=5432; User ID=postgres; Password=postgres; Database=arsenal; Pooling=true;");
         }
         public void PreencherDataGrid(string query, NpgsqlConnection conexao, DataGridView Datagrid, string nomeTabela, ref System.Windows.Forms.ToolStripStatusLabel Footer)
         {
@@ -110,12 +111,15 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
                 conexao.Close();
             }
         }
-        public bool NenhumCampoVazio(params dynamic[] campos)
+        public bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels)
         {
+            int i = 0;
             foreach (dynamic campo in campos)
             {
+                ++i;
                 if (String.IsNullOrEmpty(campo.Text))
                 {
+                    labels[i].Font =  new Font(labels[i].Font,FontStyle.Bold);
                     return false;
                 }
             }

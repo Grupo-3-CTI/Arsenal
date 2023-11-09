@@ -196,7 +196,9 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
         public void Cadastrar()
         {
-            if (Utilidade.NenhumCampoVazio(txt_Nome, txt_Cadencia, txt_Cartucho, txt_codigoSerial) && cmb_Munição.SelectedIndex != -1)
+            dynamic[] campos = { txt_Nome, txt_Cadencia, txt_Cartucho, txt_codigoSerial };
+            Label[] labels = { lbl_Nome, lbl_Cadência, lbl_Cartucho, lbl_CódigoSerial };
+            if (Utilidade.NenhumCampoVazio(campos, ref labels) && cmb_Munição.SelectedIndex != -1)
             {
                 if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja cadastrar essa arma?"))
                 {
@@ -240,7 +242,9 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
         }
         public void Editar()
         {
-            if (Utilidade.NenhumCampoVazio(txt_Nome, txt_codigoSerial, txt_Cartucho, txt_Cadencia) && cmb_Munição.SelectedIndex != -1)
+            dynamic[] campos = { txt_Nome, txt_Cadencia, txt_Cartucho, txt_codigoSerial };
+            Label[] labels = { lbl_Nome, lbl_Cadência, lbl_Cartucho, lbl_CódigoSerial };
+            if (Utilidade.NenhumCampoVazio(campos, ref labels) && cmb_Munição.SelectedIndex != -1)
             {
                 if (Utilidade.RespondeuSimParaPopup("Confirmação", "Tem certeza que deseja editar essa arma?"))
                 {

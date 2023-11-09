@@ -19,7 +19,7 @@ namespace Arsenal_Nacional_de_Armas_e_Logística
 
 
         /* Verificação de input de usuário */
-        bool NenhumCampoVazio(params dynamic[] campos);
+        bool NenhumCampoVazio(dynamic[] campos, ref System.Windows.Forms.Label[] labels);
         bool NenhumCampoVazio(List<dynamic> campos);
         bool RespondeuSimParaPopup(string titulo, string texto);
 
